@@ -6,8 +6,8 @@
 			</div>
 		</div>
 	</div>
-	
-    <form name="veteranPersonalInfoForm" class="modal-form"  ng-submit="" novalidate>
+
+    <form name="veteranPersonalInfoForm" class="modal-form" ng-model="contact"  ng-submit="" novalidate>
         <div class="row">
             <h1>Veteran Contacts</h1>
         </div>
@@ -16,42 +16,42 @@
                 <h2>Alternate Contact (son, daughter, caregiver)</h2>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                    <input type="text" class="form-control" id="name" ng-model="contact.name" placeholder="Enter name">
                 </div>
 
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="Enter address">
+                    <input type="text" class="form-control" id="address" ng-model="contact.address" placeholder="Enter address">
                 </div>
 
                 <div class="form-group">
                     <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" placeholder="Enter city">
+                    <input type="text" class="form-control" id="city" ng-model="contact.city" placeholder="Enter city">
                 </div>
 
                 <div class="form-group">
                     <label for="state">State</label>
-                    <input type="text" class="form-control" id="state" placeholder="Enter state">
+                    <input type="text" class="form-control" id="state" ng-model="contact.state" placeholder="Enter state">
                 </div>
 
                 <div class="form-group">
                     <label for="zip">Zip</label>
-                    <input type="number" class="form-control" id="zip" placeholder="Enter zip">
+                    <input type="number" class="form-control" id="zip" ng-model="contact.zip" placeholder="Enter zip">
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="text" class="form-control" id="phone" placeholder="Enter phone">
+                    <input type="text" class="form-control" id="phone" ng-model="contact.phone" placeholder="Enter phone">
                 </div>
 
                 <div class="form-group">
                     <label for="altPhone">Alternate Phone</label>
-                    <input type="text" class="form-control" id="altPhone" placeholder="Enter alternate phone">
+                    <input type="text" class="form-control" id="altPhone" ng-model="contact.altPhone" placeholder="Enter alternate phone">
                 </div>
 
                 <div class="form-group">
                     <label for="relationship">Relationship</label>
-                    <input type="text" class="form-control" id="relationship" placeholder="Enter relationship">
+                    <input type="text" class="form-control" id="relationship" ng-model="contact.relationship" placeholder="Enter relationship">
                 </div>
             </div>
 
@@ -59,42 +59,42 @@
                 <h2>Emergency Contact (if different)</h2>
                 <div class="form-group">
                     <label for="name-em">Name</label>
-                    <input type="text" class="form-control" id="name-em" placeholder="Enter name">
+                    <input type="text" class="form-control" id="name-em" ng-model="contact.name_em" placeholder="Enter name">
                 </div>
 
                 <div class="form-group">
                     <label for="address-em">Address</label>
-                    <input type="text" class="form-control" id="address-em" placeholder="Enter address">
+                    <input type="text" class="form-control" id="address-em" ng-model="contact.address_em" placeholder="Enter address">
                 </div>
 
                 <div class="form-group">
                     <label for="city-em">City</label>
-                    <input type="text" class="form-control" id="city-em" placeholder="Enter city">
+                    <input type="text" class="form-control" id="city-em" ng-model="contact.city_em" placeholder="Enter city">
                 </div>
 
                 <div class="form-group">
                     <label for="state-em">State</label>
-                    <input type="text" class="form-control" id="state-em" placeholder="Enter state">
+                    <input type="text" class="form-control" id="state-em" ng-model="contact.state_em" placeholder="Enter state">
                 </div>
 
                 <div class="form-group">
                     <label for="zip-em">Zip</label>
-                    <input type="number" class="form-control" id="zip-em" placeholder="Enter zip">
+                    <input type="number" class="form-control" id="zip-em" ng-model="contact.zip_em" placeholder="Enter zip">
                 </div>
 
                 <div class="form-group">
                     <label for="phone-em">Phone</label>
-                    <input type="text" class="form-control" id="phone-em" placeholder="Enter phone">
+                    <input type="text" class="form-control" id="phone-em" ng-model="contact.phone_em" placeholder="Enter phone">
                 </div>
 
                 <div class="form-group">
                     <label for="altPhone-em">Alternate Phone</label>
-                    <input type="text" class="form-control" id="altPhone-em" placeholder="Enter alternate phone">
+                    <input type="text" class="form-control" id="altPhone-em" ng-model="contact.altPhone_em" placeholder="Enter alternate phone">
                 </div>
 
                 <div class="form-group">
                     <label for="relationship-em">Relationship</label>
-                    <input type="text" class="form-control" id="relationship-em" placeholder="Enter address">
+                    <input type="text" class="form-control" id="relationship-em" ng-model="contact.relationship_em" placeholder="Enter address">
                 </div>
 
             </div>
