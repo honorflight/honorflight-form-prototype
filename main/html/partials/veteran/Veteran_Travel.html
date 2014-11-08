@@ -13,10 +13,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="visited">
+                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" ng-model="travel" field-name="visited">
                     <div>
                         <label class="control-label">Have you been to see your Memorial in Washington D.C.?</label>
-                        <input type="text" name="visited" id="visited" ng-model="veteran.visited" class="form-control"
+                        <input type="text" name="visited" id="visited" ng-model="travel.visited" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
@@ -28,7 +28,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="whenVisited">
                     <div>
                         <label class="control-label">If yes, when and with whom?</label>
-                        <input type="text" name="whenVisited" id="whenVisited" ng-model="veteran.whenVisited" class="form-control"
+                        <input type="text" name="whenVisited" id="whenVisited" ng-model="travel.whenVisited" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
@@ -40,7 +40,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="isGuardianRequested">
                     <div>
                         <label class="control-label">Are you requesting travel with a specific veteran(s) or guardian, if possible?</label>
-                        <input type="text" name="isGuardianRequested" id="isGuardianRequested" ng-model="veteran.isGuardianRequested" class="form-control"
+                        <input type="text" name="isGuardianRequested" id="isGuardianRequested" ng-model="travel.isGuardianRequested" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
@@ -52,7 +52,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="guardianRequested">
                     <div>
                         <label class="control-label">If yes, please name the guardian(s):</label>
-                        <input type="text" name="guardianRequested" id="guardianRequested" ng-model="veteran.guardianRequested" class="form-control"
+                        <input type="text" name="guardianRequested" id="guardianRequested" ng-model="travel.guardianRequested" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
@@ -64,7 +64,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="address">
                     <div>
                         <label class="control-label">Address</label>
-                        <input type="text" name="address" id="address" ng-model="veteran.address" class="form-control"
+                        <input type="text" name="address" id="address" ng-model="travel.address" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
@@ -74,7 +74,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="city">
                     <div>
                         <label class="control-label">City</label>
-                        <input type="text" name="city" id="city" ng-model="veteran.city" class="form-control"
+                        <input type="text" name="city" id="city" ng-model="travel.city" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
