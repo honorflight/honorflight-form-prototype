@@ -1,4 +1,4 @@
-<div ng-controller="VeteranMedicalConditionsController"> 
+<div ng-controller="VeteranMedicalConditionsController">
 	<div class="row">
 		<div class="progress">
 			<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
@@ -7,7 +7,7 @@
 		</div>
 	</div>
     <form name="veteranMedicalConditionInfoForm" class="modal-form"  ng-submit="" novalidate>
-    
+
                 I hereby authorize Greater St. Louis Honor Flight, Inc. (hereafter, “Honor Flight”), its officers, employees, members, participants, users and/or
                 volunteers, to take the action they believe is appropriate in an emergency situation. Further, I agree to indemnify and hold harmless Honor Flight,
                 any officer, affiliate, employee, member, participant, user and/or volunteer thereof, against any claim(s) arising out of said emergency care.
@@ -58,37 +58,37 @@
             <small>If you check any condition below, PLEASE discuss the trip with your physician.</small></h2>
             <div class="checkbox">
                 <label class="checkbox-inline">
-                    <input type="checkbox" value="seizures"> Seizures: of type...
+                    <input ng-model="veteranMedical.ifSeizures" type="checkbox" value="seizures"> Seizures: of type...
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" value="grandMal"> grand mal
+                    <input ng-model="veteranMedical.ifGrandMal" type="checkbox" value="grandMal"> grand mal
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="petitMal" value="option3"> petit mal
+                    <input ng-model="veteranMedical.ifPetitMal" type="checkbox" id="petitMal" value="option3"> petit mal
                 </label>
             </div>
-            
+
             <div class="form-group">
                 <label for="lastSeizure"><small>(If you have seizures)</small> When was your last seizure?</label>
-                <input type="date" class="form-control" id="lastSeizure" placeholder="Enter date">
+                <input ng-model="veteranMedical.lastSeizure" type="date" class="form-control" id="lastSeizure" placeholder="Enter date">
             </div>
-            
+
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="breathingProblems">Breathing problems
+                    <input ng-model="veteranMedical.breathProblems" type="checkbox" value="breathingProblems">Breathing problems
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="nebulizer">Use a home nebulizer machine <small>(Discuss use of hand held nebulizer with your physician)</small>
+                    <input ng-model="veteranMedical.nebulizer" type="checkbox" value="nebulizer">Use a home nebulizer machine <small>(Discuss use of hand held nebulizer with your physician)</small>
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="oxygen">Use oxygen at any time <small>(Please have physician write prescription for oxygen use during the trip)</small>
+                    <input ng-model="veteranMedical.oxygen" type="checkbox" value="oxygen">Use oxygen at any time <small>(Please have physician write prescription for oxygen use during the trip)</small>
                 </label>
             </div>
-            
+
         </div>
     </form>
 </div>
