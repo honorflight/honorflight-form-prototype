@@ -152,9 +152,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="homePhone">
                     <div>
                         <label class="control-label">Home Phone</label>
-                        <input type="text" name="homePhone" id="homePhone" ng-model="veteranInfo.homePhone" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <input type="text" name="homePhone" id="homePhone" ng-model="veteranInfo.homePhone" class="form-control" ui-mask="(999)999-9999">
                     </div>
                 </form-group>
             </div>

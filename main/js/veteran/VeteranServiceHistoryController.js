@@ -1,7 +1,7 @@
-var modules = require("modules");
+var modules = angular.module('ServiceHistory', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 var _ = require("underscore");
 
-modules.controllerModule.controller('VeteranServiceHistoryController', ['$scope', 'VeteranServiceHistoryService',
+modules.controller('VeteranServiceHistoryController', ['$scope', 'VeteranServiceHistoryService',
     function ($scope, VeteranServiceHistoryService) {
 
         $scope.veteranServiceHistory = new VeteranServiceHistory();

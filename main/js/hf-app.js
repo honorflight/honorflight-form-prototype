@@ -25,6 +25,10 @@
                     url:"/guardianPersonalInformation",
                     templateUrl: 'partials/guardian/Guardian_Personal_Information.html',
                     controller: 'GuardianPersonalInformationController'
+                }).state('veteranContacts', {
+                    url:"/veteranContacts",
+                    templateUrl: 'partials/veteran/Veteran_Contacts.html',
+
                 });
      }]);
 
