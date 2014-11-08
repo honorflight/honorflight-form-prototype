@@ -1,3 +1,21 @@
-<div class="col-md-6">
+<div ng-controller="VeteranAdditionalCommentsController">
+    <form name="veteranAdditionalCommentsForm" class="modal-form"  ng-submit="" novalidate>
+        <div class="row">
+            <h1>Additional Comments</h1>
+        </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                <form-group validate-when="submitted" form-ctrl="VeteranAdditionalCommentsController" field-name="comments">
+                    <div>
+                        <label class="control-label">Comments</label>
+                        <input type="text" name="comments" id="comments" ng-model="veteran.comments" class="form-control"
+                               tabindex="1" ng-maxlength="150"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+
+        </div>
+    </form>
 </div>
