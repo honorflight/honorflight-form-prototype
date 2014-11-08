@@ -6,11 +6,17 @@
 			</div>
 		</div>
 	</div>
+
     <form name="veteranMedicalConditionInfoForm" class="modal-form"  ng-submit="submitMedicalConditions()" novalidate>
 
         <div class="row">
             <div class="col-md-12">
-                <h3>LIST MEDICATION ALLERGIES</h3>
+                <h1>Medical Conditions</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Medication Allergies</h3>
             </div>
         </div>
         <!-- rename objects to match model-->
@@ -19,40 +25,43 @@
             <div class="col-md-7"></div>
         </div>
         <div class="row">
-            <h2>Please check the medical conditions which apply to you, past or present
-            <small>If you check any condition below, PLEASE discuss the trip with your physician.</small></h2>
-            <div class="checkbox">
-                <label class="checkbox-inline">
-                    <input ng-model="veteranMedical.ifSeizures" type="checkbox" value="seizures"> Seizures: of type...
-                </label>
-                <label class="checkbox-inline">
-                    <input ng-model="veteranMedical.ifGrandMal" type="checkbox" value="grandMal"> grand mal
-                </label>
-                <label class="checkbox-inline">
-                    <input ng-model="veteranMedical.ifPetitMal" type="checkbox" id="petitMal" value="option3"> petit mal
-                </label>
+            <div class="col-md-12">
+                <h3>Please check the medical conditions which apply to you, past or present</h3>
+                <h4>If you check any condition below, PLEASE discuss the trip with your physician.</h4>
             </div>
 
-            <div class="form-group">
-                <label for="lastSeizure"><small>(If you have seizures)</small> When was your last seizure?</label>
-                <input ng-model="veteranMedical.lastSeizure" type="date" class="form-control" id="lastSeizure" placeholder="Enter date">
+            <div class="col-md-12">
+                <div class="checkbox">
+                    <label class="checkbox-inline">
+                        <input ng-model="veteranMedical.ifGrandMal" type="checkbox" value="grandMal"> Grand mal seizure
+                    </label>
+                    <label class="checkbox-inline">
+                        <input ng-model="veteranMedical.ifPetitMal" type="checkbox" id="petitMal" value="option3"> Petit mal seizure
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="lastSeizure"><small>(If you have seizures)</small> When was your last seizure?</label>
+                    <input ng-model="veteranMedical.lastSeizure" type="date" class="form-control" id="lastSeizure" placeholder="MM/DD/YYYY">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="veteranMedical.breathProblems" type="checkbox" value="breathingProblems">Breathing problems
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="veteranMedical.nebulizer" type="checkbox" value="nebulizer">Use a home nebulizer machine <small>(Discuss use of hand held nebulizer with your physician)</small>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="veteranMedical.oxygen" type="checkbox" value="oxygen">Use oxygen at any time <small>(Please have physician write prescription for oxygen use during the trip)</small>
+                    </label>
+                </div>
             </div>
 
-            <div class="checkbox">
-                <label>
-                    <input ng-model="veteranMedical.breathProblems" type="checkbox" value="breathingProblems">Breathing problems
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input ng-model="veteranMedical.nebulizer" type="checkbox" value="nebulizer">Use a home nebulizer machine <small>(Discuss use of hand held nebulizer with your physician)</small>
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input ng-model="veteranMedical.oxygen" type="checkbox" value="oxygen">Use oxygen at any time <small>(Please have physician write prescription for oxygen use during the trip)</small>
-                </label>
-            </div>
 
         </div>
     </form>
