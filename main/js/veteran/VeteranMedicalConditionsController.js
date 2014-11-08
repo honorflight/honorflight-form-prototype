@@ -9,9 +9,23 @@ modules.controller('VeteranMedicalConditionsController', ['$scope', 'ReferenceDa
             this.ifGrandMal = false;
             this.ifPetitMal = false;
             this.lastSeizure = "";
-            this.breathProblems = "";
+            this.breathingProblems = "";
             this.nebulizer = "";
             this.oxygen = "";
+			this.colostomy="";
+			this.arthritis="";
+			this.heartProblems="";
+			this.sinusProblems="";
+			this.earProblems="";
+			this.motionSickness="";
+			this.headInjury="";
+			this.walkingProblems="";
+			this.walkingProblemsReason="";
+			this.needMobility="";
+			this.ifScooter="";
+			this.ifWheelchair="";
+			this.ifWalker="";
+			this.ifCane="";
 
         }
         function validateVeteranMedicalConditions(contact){

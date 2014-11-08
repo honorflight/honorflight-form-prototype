@@ -1,83 +1,59 @@
-
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">	<div class="row">
-
-
+<!--link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<div class="col-md-2" style="border-left: dashed;">test1</div>
+<div class="col-md-6" style="border-left: dashed;"-->
+<div ng-controller="VeteranMedicationListController">
+	<div class="row">
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" aria-valuenow="67.5" aria-valuemin="0" aria-valuemax="100" style="width: 67.5%;">
+			<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
 			Step 6/8
 			</div>
-        </div>
-
-
-
-    <div>
-        <div id="content" class="container">
-            <div class="row">
-                Hello World
-                <div ui-view>
-                    <div class="row">
-                        <div class="col-md-2" style="border-left: dashed;">test1</div>
-                        <div class="col-md-6" style="border-left: dashed;">
-                            <form class="form-inline" role="form" action="folder_page.php" method="POST">
-                                <p>
-                                    I hereby authorize Greater St. Louis Honor Flight, Inc. (hereafter, “Honor Flight”), its officers, employees, members, participants, users and/or
-                                    volunteers, to take the action they believe is appropriate in an emergency situation. Further, I agree to indemnify and hold harmless Honor Flight,
-                                    any officer, affiliate, employee, member, participant, user and/or volunteer thereof, against any claim(s) arising out of said emergency care.
-                                </p>
-
-                                <div class="form-group">
-                                    <span style="color:black; font-size: 100%;">Signature:</span>
-                                    <input type="text" class="form-control" name="Signature" placeholder="Signature" required>
-                                </div>
-                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                    <span style="color:black; font-size: 100%;">Date:</span>
-                                    <input type="text" class="form-control" name="Date" placeholder="Date" required>
-                                </div>
-                                <h4>VETERAN MEDICAL INFORMATION AND MEDICATION LIST</h4>
-                                <p>This information will help Honor Flight serve you best on the trip by meeting all of your needs. The medical information
-                                    you provide WILL NOT disqualify you from going on a flight. Information is used for Honor Flight personnel only.</p>
-
-                                <div style="padding-top: 10px; border-top: 1px solid dodgerblue;">
-                                    <h4>Medication History #1:</h4>
-                                    <p style="color:black; font-size: 80%;">Medication/ Dose (MG ETC) / How Often (Time of day)/ Route (By Mouth, Injection, Topical) </p>
-
-                                    <div class="form-group" >
-                                        <span style="color:black; font-size: 100%;">Medication:</span>
-                                        <input type="text" class="form-control" name="Medication" placeholder="Medication" required>
-                                    </div>
-
-                                    <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                        <span style="color:black; font-size: 100%;">Dose:</span>
-                                        <input type="text" class="form-control" name="dose" placeholder="100mg" required>
-                                    </div>
-
-                                    <div class="form-group" style="padding-top: 10px; padding-bottom: 10px;">
-                                        <span style="color:black; font-size: 100%;">How Often:</span>
-                                        <input type="text" class="form-control" name="how_often" placeholder="once a day" required>
-                                    </div>
-
-                                    <div class="form-group" style="padding-left: 20px; padding-right: 20px;padding-top: 10px; padding-bottom: 10px;">
-                                        <span style="color:black; font-size: 100%;">Route:</span>
-                                        <input type="text" class="form-control" name="route" placeholder="By mouth, Injection, Topical, etc" required>
-                                    </div>
-
-                                </div>
-
-
-
-
-                            </form>
-                        </div>
-                        <div class="col-md-2" style="border-left: dashed;">test3</div>
-                        <div class="col-md-2" style="border-left: dashed;">test4</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
 		</div>
 	</div>
+	<form class="form-inline" role="form" ng-submit="" novalidate>
+		<p>
+			I hereby authorize Greater St. Louis Honor Flight, Inc. (hereafter, “Honor Flight”), its officers, employees, members, participants, users and/or
+			volunteers, to take the action they believe is appropriate in an emergency situation. Further, I agree to indemnify and hold harmless Honor Flight,
+			any officer, affiliate, employee, member, participant, user and/or volunteer thereof, against any claim(s) arising out of said emergency care.
+		</p>
+		<div class="checkbox">
+			<label>
+				<input ng-model="veteranMedical.ifAuthorize" type="checkbox" value="authorize">Check if you agree
+			</label>
+		</div>
+
+		<h4>VETERAN MEDICAL INFORMATION AND MEDICATION LIST</h4>
+		<p>This information will help Honor Flight serve you best on the trip by meeting all of your needs. The medical information
+			you provide WILL NOT disqualify you from going on a flight. Information is used for Honor Flight personnel only.</p>
+
+		<div style="padding-top: 10px; border-top: 1px solid dodgerblue;" data-ng-repeat="med in veteranMedical.medications">
+			<h4>Medication Information:</h4>
+			<p style="color:black; font-size: 80%;">Medication/ Dose (MG ETC) / How Often (Time of day)/ Route (By Mouth, Injection, Topical) </p>
+
+			<div class="form-group" >
+				<span style="color:black; font-size: 100%;">Medication:</span>
+				<input type="text" ng-model="med.name" class="form-control" name="medication" placeholder="Medication" required>
+			</div>
+
+			<div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+				<span style="color:black; font-size: 100%;">Dose:</span>
+				<input type="text" ng-model="med.dose" class="form-control" name="dose" placeholder="100mg" required>
+			</div>
+
+			<div class="form-group" style="padding-top: 10px; padding-bottom: 10px;">
+				<span style="color:black; font-size: 100%;">How Often:</span>
+				<input type="text" ng-model="med.time" class="form-control" name="how_often" placeholder="once a day" required>
+			</div>
+
+			<div class="form-group" style="padding-left: 20px; padding-right: 20px;padding-top: 10px; padding-bottom: 10px;">
+				<span style="color:black; font-size: 100%;">Route:</span>
+				<input type="text" ng-model="med.route" class="form-control" name="route" placeholder="By mouth, Injection, Topical, etc" required>
+			</div>
+
+		</div>
+
+		<button ng-click="addNewMedication()">Add New Medication</button>
+	</form>
+</div>
+<!--/div>
+<div class="col-md-2" style="border-left: dashed;">test3</div>
+<div class="col-md-2" style="border-left: dashed;">test4</div-->

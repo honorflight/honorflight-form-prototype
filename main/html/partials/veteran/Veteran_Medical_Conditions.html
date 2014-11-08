@@ -1,3 +1,6 @@
+<!--link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<div class="col-md-2" style="border-left: dashed;">test1</div>
+<div class="col-md-6" style="border-left: dashed;"-->
 <div ng-controller="VeteranMedicalConditionsController">
 	<div class="row">
 		<div class="progress">
@@ -7,42 +10,45 @@
 		</div>
 	</div>
 
-    <form name="veteranMedicalConditionInfoForm" class="modal-form"  ng-submit="submitMedicalConditions()" novalidate>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Medical Conditions</h1>
-            </div>
-        </div>
-        <div class="row">
+        <!--div class="row">
             <div class="col-md-12">
                 <h3>Medication Allergies</h3>
             </div>
-        </div>
+        </div-->
         <!-- rename objects to match model-->
-        <div class="row" ng-repeat="allergy in allergies">
+        <!--div class="row" ng-repeat="allergy in allergies">
             <div class="col-md-5">{allergy.name}</div>
             <div class="col-md-7"></div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h3>Please check the medical conditions which apply to you, past or present</h3>
-                <h4>If you check any condition below, PLEASE discuss the trip with your physician.</h4>
+        <div class="row"-->
+            <h4>Please check the medical conditions which apply to you, past or present
+            <small>If you check any condition below, PLEASE discuss the trip with your physician.</small></h4>
+            <div class="checkbox">
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.ifSeizures" type="checkbox" value="seizures"> Seizures: of type...
+                </label>
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.ifGrandMal" type="checkbox" value="grandMal"> grand mal
+                </label>
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.ifPetitMal" type="checkbox" id="petitMal" value="option3"> petit mal
+                </label>
             </div>
 
-            <div class="col-md-12">
-                <div class="checkbox">
-                    <label class="checkbox-inline">
-                        <input ng-model="veteranMedical.ifGrandMal" type="checkbox" value="grandMal"> Grand mal seizure
-                    </label>
-                    <label class="checkbox-inline">
-                        <input ng-model="veteranMedical.ifPetitMal" type="checkbox" id="petitMal" value="option3"> Petit mal seizure
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label for="lastSeizure"><small>(If you have seizures)</small> When was your last seizure?</label>
-                    <input ng-model="veteranMedical.lastSeizure" type="date" class="form-control" id="lastSeizure" placeholder="MM/DD/YYYY">
-                </div>
+            <div class="form-group">
+                <label for="lastSeizure"><small>(If you have seizures)</small> When was your last seizure?</label>
+                <input ng-model="veteranMedical.lastSeizure" type="date" class="form-control" id="lastSeizure" placeholder="Enter date">
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.breathingProblems" type="checkbox" value="breathingProblems">Breathing problems
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.nebulizer" type="checkbox" value="nebulizer">Use a home nebulizer machine <small>(Discuss use of hand held nebulizer with your physician)</small>
+                </label>
             </div>
             <div class="col-md-12">
                 <div class="checkbox">
@@ -61,8 +67,71 @@
                     </label>
                 </div>
             </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.colostomy" type="checkbox" value="colostomy/iliostomy">Colostomy/Iliostomy <small>(Bags need to be vented prior to flight)</small>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.arthritis" type="checkbox" value="arthritis">Arthritis
+				</label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.heartProblems" type="checkbox" value="heart">Heart Problems
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.sinusProblems" type="checkbox" value="sinus">Sinus Problems
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.earProblems" type="checkbox" value="ear">Ear Problems
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.motionSickness" type="checkbox" value="motion">Motion Sickness
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.headInjury" type="checkbox" value="head">Open Head Injury
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input ng-model="veteranMedical.walkingProblems" type="checkbox" value="walking">Problems walking the length of a football field without assistance
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="lastSeizure">Reason</label>
+                <input ng-model="veteranMedical.walkingProblemsReason" type="text" class="form-control" id="walkingProblemsReason" placeholder="Reason">
+            </div>
+            <div class="checkbox">
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.needMobility" type="checkbox" value="mobility"> Mobility Device needed day of flight:
+                </label>
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.ifScooter" type="checkbox" value="scooter"> Scooter
+                </label>
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.ifWheelchair" type="checkbox" value="wheelchair"> WheelChair
+                </label>
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.ifWalker" type="checkbox" value="walker"> Walker
+                </label>
+                <label class="checkbox-inline">
+                    <input ng-model="veteranMedical.ifCane" type="checkbox" value="cane"> Cane
+                </label>
 
-
-        </div>
+        <!--/div-->
     </form>
 </div>
+</div>
+<!--/div>
+<div class="col-md-2" style="border-left: dashed;">test3</div>
+<div class="col-md-2" style="border-left: dashed;">test4</div-->
