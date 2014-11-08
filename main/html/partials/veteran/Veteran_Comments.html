@@ -1,4 +1,6 @@
-<div ng-controller="VeteranAdditionalCommentsController">
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<div ng-controller="VeteranCommentsController">
 	<div class="row">
 		<div class="progress">
 			<div class="progress-bar" role="progressbar" aria-valuenow="87.5" aria-valuemin="0" aria-valuemax="100" style="width: 87.5%;">
@@ -6,7 +8,7 @@
 			</div>
 		</div>
 	</div>
-	
+
     <form name="veteranAdditionalCommentsForm" class="modal-form"  ng-submit="" novalidate>
         <div class="row">
             <h1>Additional Comments</h1>
@@ -17,7 +19,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranAdditionalCommentsController" field-name="comments">
                     <div>
                         <label class="control-label">Comments</label>
-                        <input type="text" name="comments" id="comments" ng-model="veteran.comments" class="form-control"
+                        <input ng-model="veteran_comments.comment" type="text" name="comments" id="comments" ng-model="veteran.comments" class="form-control"
                                tabindex="1" ng-maxlength="150"
                                required ng-trim="true">
                     </div>
