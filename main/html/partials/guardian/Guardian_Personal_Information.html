@@ -42,115 +42,147 @@
 <div>
     <div id="content" class="container">
         <div class="row">
-            Hello World
+            
             <div ui-view>
                 <div class="row">
-                    <div class="col-md-2" style="border-left: dashed;">test1</div>
-                    <div class="col-md-6" style="border-left: dashed;">
+                    <div class="col-md-6">
                         <form class="form-inline" role="form" action="folder_page.php" ng-model="personalInfo" method="POST">
-                            <div class="form-group">
-                                <span style="color:black; font-size: 100%;">First Name:</span>
-                                <input type="text" class="form-control" name="firstName" ng-model="personalInfo.firstName" placeholder="First Name" required>
-                            </div>
-                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                <span style="color:black; font-size: 100%;">Last Name:</span>
-                                <input type="text" class="form-control" name="lastName" ng-model="personalInfo.lastName" placeholder="Last Name" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">First Name</label>
+                                    <input type="text" class="form-control" name="firstName" ng-model="personalInfo.firstName" placeholder="First Name" required>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <span style="color:black; font-size: 100%;">Middle Name:</span>
-                                <input type="text" class="form-control" name="middleName" ng-model="personalInfo.middleName" placeholder="Middle Name" required>
-                            </div>
-                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                <span style="color:black; font-size: 100%;">Nick Name:</span>
-                                <input type="text" class="form-control" name="nickName" ng-model="personalInfo.nickName"placeholder="Nick Name" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Last Name</label>
+                                    <input type="text" class="form-control" name="lastName" ng-model="personalInfo.lastName" placeholder="Last Name" required>
+                                </div>
                             </div>
 
-                            <div style="padding-top: 10px;">
-                                <span style="color:black; font-size: 100%;">Address:</span>
-                                <input type="text" class="form-control" name="address" ng-model="personalInfo.address" style="width: 82%" placeholder="Address" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Middle Name</label>
+                                    <input type="text" class="form-control" name="middleName" ng-model="personalInfo.middleName" placeholder="Middle Name" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" >
-                                <span style="color:black; font-size: 100%;">City:</span>
-                                <input type="text" class="form-control" name="city" ng-model="personalInfo.city" placeholder="City" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Nick Name</label>
+                                    <input type="text" class="form-control" name="nickName" ng-model="personalInfo.nickName" placeholder="Nick Name" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                <span style="color:black; font-size: 100%;">State:</span>
-                                <input type="text" class="form-control" name="state" ng-model="personalInfo.state" placeholder="State" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Address</label>
+                                    <input type="text" class="form-control" name="address" ng-model="personalInfo.address" placeholder="Address" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" >
-                                <span style="color:black; font-size: 100%;">Zip:</span>
-                                <input type="text" class="form-control" name="zip" ng-model="personalInfo.zip" placeholder="Zip" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">City</label>
+                                    <input type="text" class="form-control" name="city" ng-model="personalInfo.city" placeholder="City" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                <span style="color:black; font-size: 100%;">Day Phone:</span>
-                                <input type="text" class="form-control" name="dayPhone" ng-model="personalInfo.dayPhone" placeholder="Day Phone" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">State</label>
+                                    <input type="text" class="form-control" name="state" ng-model="personalInfo.state" placeholder="State" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" >
-                                <span style="color:black; font-size: 100%;">Evening Phone:</span>
-                                <input type="text" class="form-control" name="eveningPhone" ng-model="personalInfo.eveningPhone" placeholder="Evening Phone" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Zip</label>
+                                    <input type="text" class="form-control" name="zip" ng-model="personalInfo.zip" placeholder="Zip" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                <span style="color:black; font-size: 100%;">Cell Phone:</span>
-                                <input type="text" class="form-control" name="cellPhone" ng-model="personalInfo.cellPhone" placeholder="Cell Phone" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Day Phone</label>
+                                    <input type="text" class="form-control" name="dayPhone" ng-model="personalInfo.dayPhone" placeholder="Day Phone" required>
+                                </div>
                             </div>
 
-                            <div style="padding-top: 10px;">
-                                <span style="color:black; font-size: 100%;">Email:</span>
-                                <input type="text" class="form-control" name="email" ng-model="personalInfo.email" style="width: 82%" placeholder="Email" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Evening Phone</label>
+                                    <input type="text" class="form-control" name="eveningPhone" ng-model="personalInfo.eveningPhone" placeholder="Evening Phone" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" >
-                                <span style="color:black; font-size: 100%;">Occupation:</span>
-                                <input type="text" class="form-control" name="occupation" ng-model="personalInfo.occupation" placeholder="Occupation" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Cell Phone</label>
+                                    <input type="text" class="form-control" name="cellPhone" ng-model="personalInfo.cellPhone" placeholder="Cell Phone" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                <span style="color:black; font-size: 100%;">Age:</span>
-                                <input type="text" class="form-control" name="age" ng-model="personalInfo.age" placeholder="Age" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Email</label>
+                                    <input type="text" class="form-control" name="email" ng-model="personalInfo.email" style="width: 82%" placeholder="Email" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" >
-                                <span style="color:black; font-size: 100%;">Date Of Birth:</span>
-                                <input type="text" class="form-control" name="dateOfBirth" ng-model="personalInfo.dateOfBirth" placeholder="MM/DD/YYYY" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Occupation</label>
+                                    <input type="text" class="form-control" name="occupation" ng-model="personalInfo.occupation" placeholder="Occupation" required>
+                                </div>
                             </div>
 
-                            <div style="padding-top: 10px;">
-                                <span style="color:black; font-size: 100%;">Are you a veteran? </span>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Age</label>
+                                    <input type="text" class="form-control" name="age" ng-model="personalInfo.age" placeholder="Age" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Date Of Birth</label>
+                                    <input type="text" class="form-control" name="dateOfBirth" ng-model="personalInfo.dateOfBirth" placeholder="MM/DD/YYYY" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span>Are you a veteran? </span>
                                 <input type="radio" name="veteranStatus"> Yes
                                 <input type="radio" name="veteranStatus"> No
-                                <span style="color:black; padding-left: 20px; font-size: 100%;">If yes, branch of service:</span>
+                                <span>If yes, branch of service:</span>
                                 <input type="text" class="form-control" name="branch" ng-model="personalInfo.branch" placeholder="Branch of Service" required>
-
                             </div>
 
-
-                            <div class="form-group" >
-                                <span style="color:black; font-size: 100%;">Where Served:</span>
-                                <input type="text" class="form-control" name="whereServed" ng-model="personalInfo.whereServed" placeholder="Where Served" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Where Served</label>
+                                    <input type="text" class="form-control" name="whereServed" ng-model="personalInfo.whereServed" placeholder="Where Served" required>
+                                </div>
                             </div>
 
-                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-                                <span style="color:black; font-size: 100%;">When:</span>
-                                <input type="text" class="form-control" name="whenServed" ng-model="personalInfo.whenServed" placeholder="When Served" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">when Served</label>
+                                    <input type="text" class="form-control" name="whenServed" ng-model="personalInfo.whenServed" placeholder="When Served" required>
+                                </div>
                             </div>
 
-                            <div style="padding-top: 10px;">
-                                <span style="color:black; font-size: 100%;">Are you requesting to travel with a specific veteran, if possible?  </span>
+                            <div>
+                                <span>Are you requesting to travel with a specific veteran, if possible?  </span>
                                 <input type="radio" name="veteranSpecific"> Yes
                                 <input type="radio" name="veteranSpecific"> No
-
                             </div>
 
-                            <div style="padding-top: 10px;">
-                                <span style="color:black; font-size: 100%;">If yes, please name the veteran:  </span>
-                                <input type="text" class="form-control" name="veteranName" ng-model="personalInfo.veteranName" style="width: 60%" placeholder="Veteran Name" required>
+                            <div>
+                                <span>If yes, please name the veteran:  </span>
+                                <input type="text" class="form-control" name="veteranName" ng-model="personalInfo.veteranName" placeholder="Veteran Name" required>
 
                             </div>
                             <p style="color: #0000FF; font-size: 90%;">(Note: The veteran listed above must fill out and submit a separate Veteran Application)</p>
@@ -159,8 +191,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-2" style="border-left: dashed;">test3</div>
-                    <div class="col-md-2" style="border-left: dashed;">test4</div>
+
                 </div>
             </div>
         </div>
