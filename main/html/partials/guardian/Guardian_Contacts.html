@@ -1,78 +1,40 @@
 <div class="col-md-12">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" ng-repeat="contact in contacts">
             <div class="form-group">
                 <label >Name</label>
-                <input type="text" class="form-control"  placeholder="Name">
+                <input ng-model="contact.name" type="text" class="form-control"  placeholder="Name">
             </div>
             <div class="form-group">
                 <label >E-Mail</label>
-                <input type="email" class="form-control"  placeholder="Email Address">
+                <input ng-model="contact.email" type="email" class="form-control"  placeholder="Email Address">
             </div>
             <div class="form-group">
                 <label >Address</label>
-                <input type="text" class="form-control"  placeholder="Street Address">
+                <input ng-model="contact.address" type="text" class="form-control"  placeholder="Street Address">
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label >City</label>
-                    <input type="text" class="form-control"  placeholder="City">
+                    <input ng-model="contact.city" type="text" class="form-control"  placeholder="City">
                 </div>
                 <div class="form-group col-md-3">
                     <label >State</label>
-                    <input type="text" class="form-control"  placeholder="State">
+                    <input ng-model="contact.state" type="text" class="form-control"  placeholder="State">
                 </div>
                 <div class="form-group col-md-3">
                     <label >Zip</label>
-                    <input type="number" class="form-control"  placeholder="Zip">
+                    <input ng-model="contact.zip" type="number" class="form-control"  placeholder="Zip">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label >Day Phone</label>
-                    <input type="text" class="form-control"  placeholder="Day Phone">
+                    <input ng-model="contact.dayPhone" type="text" class="form-control"  placeholder="Day Phone">
                 </div>
                 <div class="form-group col-md-6">
                     <label >Eve. Phone</label>
-                    <input type="text" class="form-control"  placeholder="Eve. Phone">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label >Name</label>
-                <input type="text" class="form-control"  placeholder="Name">
-            </div>
-            <div class="form-group">
-                <label >E-Mail</label>
-                <input type="email" class="form-control"  placeholder="Email Address">
-            </div>
-            <div class="form-group">
-                <label >Address</label>
-                <input type="text" class="form-control"  placeholder="Street Address">
-            </div>
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <label >City</label>
-                    <input type="text" class="form-control"  placeholder="City">
-                </div>
-                <div class="form-group col-md-3">
-                    <label >State</label>
-                    <input type="text" class="form-control"  placeholder="State">
-                </div>
-                <div class="form-group col-md-3">
-                    <label >Zip</label>
-                    <input type="number" class="form-control"  placeholder="Zip">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <label >Day Phone</label>
-                    <input type="text" class="form-control"  placeholder="Day Phone">
-                </div>
-                <div class="form-group col-md-6">
-                    <label >Eve. Phone</label>
-                    <input type="text" class="form-control"  placeholder="Eve. Phone">
+                    <input ng-model="contact.evePhone" type="text" class="form-control"  placeholder="Eve. Phone">
                 </div>
             </div>
         </div>
