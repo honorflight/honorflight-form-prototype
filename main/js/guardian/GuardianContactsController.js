@@ -1,6 +1,6 @@
-var modules = require("modules");
+var modules = angular.module('GuardianContacts', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controllerModule.controller('GuardianContactsController', ['$scope', 'ReferenceDataService', 'GuardianContactsService',
+modules.controller('GuardianContactsController', ['$scope', 'ReferenceDataService', 'GuardianContactsService',
     function ($scope, ReferenceDataService, GuardianContactsService) {
         $scope.contacts = [new Contact("personalReference"), new Contact("emergencyReference")];
         function Contact(type){
