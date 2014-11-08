@@ -4,10 +4,11 @@ modules.controllerModule.controller('VeteranCommentsController', ['$scope', 'Ref
     function ($scope, ReferenceDataService, VeteranCommentsService) {
 
 
-        $scope.contacts = [new Comment("personalReference")];
+        $scope.veteran_comments= [new Comment()];
         function Comment(){
             this.comment="";
         }
+
         function validateComment(contact){
             //TODO validate contact
         }
