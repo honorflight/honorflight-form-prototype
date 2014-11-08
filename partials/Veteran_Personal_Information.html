@@ -2,7 +2,83 @@
     <form name="veteranPersonalInfoForm" class="modal-form"  ng-submit="" novalidate>
         <div class="row">
             <div class="col-md-6">
-
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="First Name">
+                    <div>
+                        <label class="control-label">First Name</label>
+                        <input type="text" name="firstName" id="firstName" ng-model="veteran.firstName" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="Last Name">
+                    <div>
+                        <label class="control-label">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" ng-model="veteran.lastName" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="Middle Name">
+                    <div>
+                        <label class="control-label">Middle Name</label>
+                        <input type="text" name="middleName" id="middleName" ng-model="veteran.middleName" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="Nickname">
+                    <div>
+                        <label class="control-label">Middle Name</label>
+                        <input type="text" name="nickname" id="nickname" ng-model="veteran.nickname" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="Date of Birth">
+                    <div>
+                        <label class="control-label">Date of Birth</label>
+                        <input type="text" name="dateOfBirth" id="dateOfBirth" ng-model="veteran.dateOfBirth" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="Age">
+                    <div>
+                        <label class="control-label">Age</label>
+                        <input type="text" name="age" id="age" ng-model="veteran.age" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="T-Shirt Size">
+                    <div>
+                        <label class="control-label">Date of Birth</label>
+                        <input type="text" name="tShirtSize" id="tShirtSize" ng-model="veteran.tShirtSize" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                &nbsp;
             </div>
         </div>
     </form>
