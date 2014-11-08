@@ -1,4 +1,4 @@
-<div ng-controller="VeteranPersonalInfoController">
+<div ng-controller="VeteranPersonalInformationController">
 	<div class="row">
 		<div class="progress">
 			<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
@@ -7,14 +7,14 @@
 		</div>
 	</div>
 
-    <form name="veteranPersonalInfoForm" class="modal-form" ng-model="veteranInfo"  ng-submit="submitForm()" novalidate>
+    <form name="veteranPersonalInfoForm" class="modal-form" ng-model="veteranInfo"  ng-submit="submitVeteranPersonalInformation()" novalidate>
         <div class="row">
             <h1>Personal Information</h1>
         </div>
 
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="firstName">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="firstName">
                     <div>
                         <label class="control-label">First Name</label>
                         <input type="text" name="firstName" id="firstName" ng-model="veteranInfo.firstName" class="form-control"
@@ -24,7 +24,7 @@
                 </form-group>
             </div>
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="lastName">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="lastName">
                     <div>
                         <label class="control-label">Last Name</label>
                         <input type="text" name="lastName" id="lastName" ng-model="veteranInfo.lastName" class="form-control"
@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="middleName">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="middleName">
                     <div>
                         <label class="control-label">Middle Name</label>
                         <input type="text" name="middleName" id="middleName" ng-model="veteranInfo.middleName" class="form-control"
@@ -46,7 +46,7 @@
                 </form-group>
             </div>
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="nickname">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="nickname">
                     <div>
                         <label class="control-label">Middle Name</label>
                         <input type="text" name="nickname" id="nickname" ng-model="veteranInfo.nickname" class="form-control"
@@ -58,7 +58,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="dateOfBirth">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="dateOfBirth">
                     <div>
                         <label class="control-label">Date of Birth</label>
                         <input type="text" name="dateOfBirth" id="dateOfBirth" ng-model="veteranInfo.dateOfBirth" class="form-control"
@@ -68,7 +68,7 @@
                 </form-group>
             </div>
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="age">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="age">
                     <div>
                         <label class="control-label">Age</label>
                         <input type="text" name="age" id="age" ng-model="veteranInfo.age" class="form-control"
@@ -80,7 +80,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="tShirtSize">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="tShirtSize">
                     <div>
                         <label class="control-label">Date of Birth</label>
                         <input type="text" name="tShirtSize" id="tShirtSize" ng-model="veteranInfo.tShirtSize" class="form-control"
@@ -95,7 +95,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="address">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="address">
                     <div>
                         <label class="control-label">Address</label>
                         <input type="text" name="address" id="address" ng-model="veteranInfo.address" class="form-control"
@@ -105,7 +105,7 @@
                 </form-group>
             </div>
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="city">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="city">
                     <div>
                         <label class="control-label">City</label>
                         <input type="text" name="city" id="city" ng-model="veteranInfo.city" class="form-control"
@@ -117,7 +117,7 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="state">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="state">
                     <div>
                         <label class="control-label">State</label>
                         <input type="text" name="state" id="state" ng-model="veteranInfo.state" class="form-control"
@@ -127,7 +127,7 @@
                 </form-group>
             </div>
             <div class="col-md-5">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="zip">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="zip">
                     <div>
                         <label class="control-label">Zip Code</label>
                         <input type="text" name="zipCode" id="zipCode" ng-model="veteranInfo.zipCode" class="form-control"
@@ -137,7 +137,7 @@
                 </form-group>
             </div>
             <div class="col-md-5">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="county">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="county">
                     <div>
                         <label class="control-label">County</label>
                         <input type="text" name="county" id="county" ng-model="veteranInfo.county" class="form-control"
@@ -149,7 +149,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="homePhone">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="homePhone">
                     <div>
                         <label class="control-label">Home Phone</label>
                         <input type="text" name="homePhone" id="homePhone" ng-model="veteranInfo.homePhone" class="form-control"
@@ -159,7 +159,7 @@
                 </form-group>
             </div>
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="cellPhone">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="cellPhone">
                     <div>
                         <label class="control-label">Cell Phone</label>
                         <input type="text" name="cellPhone" id="cellPhone" ng-model="veteranInfo.cellPhone" class="form-control"
@@ -171,7 +171,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="email">
+                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="email">
                     <div>
                         <label class="control-label">E-Mail Address</label>
                         <input type="text" name="email" id="email" ng-model="veteranInfo.email" class="form-control"

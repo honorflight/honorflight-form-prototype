@@ -1,10 +1,10 @@
 var modules = require("modules");
+var _ = require("underscore");
 
-modules.controllerModule.controller('VeteranServiceHistoryController', ['$scope', 'ReferenceDataService', 'VeteranServiceHistoryService',
-    function ($scope, ReferenceDataService, VeteranServiceHistoryService) {
+modules.controllerModule.controller('VeteranServiceHistoryController', ['$scope', 'VeteranServiceHistoryService',
+    function ($scope, VeteranServiceHistoryService) {
 
         $scope.veteranServiceHistory = new VeteranServiceHistory();
-        $scope.branches = {};
 
         function VeteranServiceHistory(){
             this.branch = "";
@@ -21,10 +21,11 @@ modules.controllerModule.controller('VeteranServiceHistoryController', ['$scope'
         function validateVeteranInfo(){
 
         }
+
         $scope.submitForm = function(){
             if(validateVeteranInfo()){
 
             }
-        }
+        };
     }
 ]);
