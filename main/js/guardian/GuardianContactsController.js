@@ -19,8 +19,14 @@ modules.controllerModule.controller('GuardianContactsController', ['$scope', 'Re
         }
         $scope.submitForm = function(){
             if(validateContact()){
-
+                GuardianContactsService.sendForm($scope.contacts);
             }
         }
     }
-]);
+]).factory('GuardianContactsService', ['$http', function ($http) {
+    return {
+        sendForm: function (details) {
+            return $http.post('api/budget/budgets.do',details);
+        }
+    };
+}]);
