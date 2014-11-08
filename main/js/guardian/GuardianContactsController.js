@@ -2,7 +2,8 @@ var modules = require("modules");
 
 modules.controllerModule.controller('GuardianContactsController', ['$scope', 'ReferenceDataService', 'GuardianContactsService',
     function ($scope, ReferenceDataService, GuardianContactsService) {
-        function contact(type){
+        $scope.contacts = [new Contact("personalReference"), new Contact("emergencyReference")];
+        function Contact(type){
             this.type = type;
             this.name = "";
             this.email = "";
@@ -15,6 +16,11 @@ modules.controllerModule.controller('GuardianContactsController', ['$scope', 'Re
         }
         function validateContact(contact){
             //TODO validate contact
+        }
+        $scope.submitForm = function(){
+            if(validateContact()){
+
+            }
         }
     }
 ]);
