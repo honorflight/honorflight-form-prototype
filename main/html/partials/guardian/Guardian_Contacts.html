@@ -1,6 +1,7 @@
 <div class="col-md-12" ng-controller="GuardianContactsController">
     <div class="row">
         <div class="col-md-6" ng-repeat="contact in contacts">
+            <h3>{{contact.type}}</h3>
             <div class="form-group">
                 <label >Name</label>
                 <input ng-model="contact.name" type="text" class="form-control"  placeholder="Name">
@@ -30,16 +31,16 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label >Day Phone</label>
-                    <input ng-model="contact.dayPhone" type="text" class="form-control"  placeholder="Day Phone">
+                    <input ui-mask="(999) 999-9999" ng-model="contact.dayPhone" type="text" class="form-control" >
                 </div>
                 <div class="form-group col-md-6">
                     <label >Eve. Phone</label>
-                    <input ng-model="contact.evePhone" type="text" class="form-control"  placeholder="Eve. Phone">
+                    <input ui-mask="(999) 999-9999" ng-model="contact.evePhone" type="text" class="form-control" >
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <button class="btn btn-primary">Next Step>></button>
+        <button class="btn btn-primary pull-right">Next Step>></button>
     </div>
 </div>
