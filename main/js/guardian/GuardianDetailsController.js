@@ -1,7 +1,7 @@
 var modules = angular.module('GuardianDetails', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('GuardianDetailsController', ['$scope', 'ReferenceDataService', 'GuardianDetailsService',
-    function ($scope, ReferenceDataService, GuardianDetailsService) {
+modules.controller('GuardianDetailsController', ['$scope',  'GuardianDetailsService',
+    function ($scope,  GuardianDetailsService) {
 
         $scope.details = new Details();
         function Details(){

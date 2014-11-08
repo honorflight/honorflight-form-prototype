@@ -1,6 +1,6 @@
-var modules = require("../modules");
+var modules = angular.module('GuardianPersonalInformation', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controllerModule.controller('GuardianPersonalInformationController', ['$scope', 'ReferenceDataService', 'GuardianPersonalInformationService',
+modules.controller('GuardianPersonalInformationController', ['$scope', 'GuardianPersonalInformationService',
     function ($scope, ReferenceDataService, GuardianPersonalInformationService) {
         $scope.personalInfo = new PersonalInfo();
         function PersonalInfo(type){
@@ -34,4 +34,10 @@ modules.controllerModule.controller('GuardianPersonalInformationController', ['$
             }
         }
     }
-]);
+]).factory('GuardianPersonalInformationService', ['$http', function ($http) {
+    return {
+        sendForm: function (details) {
+            return $http.post('api/budget/budgets.do',details);
+        }
+    };
+}]);

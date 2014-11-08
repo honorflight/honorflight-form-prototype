@@ -8,7 +8,8 @@
             'ui.router',
             'ui.bootstrap',
             'GuardianDetails',
-            'GuardianContacts'
+            'GuardianContacts',
+            'GuardianPersonalInformation'
         ]
     ).config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $stateProvider
@@ -17,8 +18,13 @@
                     templateUrl: 'partials/guardian/Guardian_Details.html',
                     controller: 'GuardianDetailsController'
                 }).state('guardianContacts', {
+                    url:"/guardianContacts",
                     templateUrl: 'partials/guardian/Guardian_Contacts.html',
                     controller: 'GuardianContactsController'
+                }).state('guardianPersonalInformation',{
+                    url:"/guardianPersonalInformation",
+                    templateUrl: 'partials/guardian/Guardian_Personal_Information.html',
+                    controller: 'GuardianPersonalInformationController'
                 });
      }]);
 

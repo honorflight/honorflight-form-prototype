@@ -1,8 +1,10 @@
 var modules = angular.module('GuardianContacts', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('GuardianContactsController', ['$scope', 'ReferenceDataService', 'GuardianContactsService',
-    function ($scope, ReferenceDataService, GuardianContactsService) {
-        $scope.contacts = [new Contact("personalReference"), new Contact("emergencyReference")];
+modules.controller('GuardianContactsController', ['$scope', 'GuardianContactsService',
+    function ($scope, GuardianContactsService) {
+        $scope.contacts = [];
+        $scope.contacts.push(new Contact("personalReference"));
+        $scope.contacts.push(new Contact("emergencyReference"));
         function Contact(type){
             this.type = type;
             this.name = "";
