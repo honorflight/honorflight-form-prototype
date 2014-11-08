@@ -1,0 +1,41 @@
+<div ng-controller="VeteranPersonalInfoController"> <!--Controller name may be different-->
+    <form name="veteranPersonalInfoForm" class="modal-form"  ng-submit="" novalidate>/
+        <div class="row">
+			<h2>Please check the medical conditions which apply to you, past or present
+			<small>If you check any condition below, PLEASE discuss the trip with your physician.</small></h2>
+			<div class="checkbox">
+				<label class="checkbox-inline">
+					<input type="checkbox" value="seizures"> Seizures: of type...
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" value="grandMal"> grand mal
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="petitMal" value="option3"> petit mal
+				</label>
+			</div>
+			
+			<div class="form-group">
+				<label for="lastSeizure"><small>(If you have seizures)</small> When was your last seizure?</label>
+				<input type="date" class="form-control" id="lastSeizure" placeholder="Enter date">
+			</div>
+			
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="breathingProblems">Breathing problems
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="nebulizer">Use a home nebulizer machine <small>(Discuss use of hand held nebulizer with your physician)</small>
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="oxygen">Use oxygen at any time <small>(Please have physician write prescription for oxygen use during the trip)</small>
+				</label>
+			</div>
+			
+		</div>
+	</form>
+</div>

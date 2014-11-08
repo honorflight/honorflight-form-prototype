@@ -1,0 +1,4 @@
+<div class="form-group" ng-class="{'has-error': isInvalid('{{fieldName}}')}">
+    <div ng-transclude></div>
+    <p class="help-block" ng-show="hasErrors('{{fieldName}}', 'required')">{{camelToReadable(fieldName)}} is required</p>
+</div>

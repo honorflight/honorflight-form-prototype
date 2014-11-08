@@ -1,0 +1,121 @@
+<div ng-controller="VeteranServiceHistoryController">
+    <form name="veteranServiceHistoryForm" class="modal-form"  ng-submit="" novalidate>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="branch">
+                    <div>
+                        <label class="control-label">Branch</label>
+                        <input type="text" name="branch" id="branch" ng-model="veteran.branch" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="startMonth">
+                    <div>
+                        <label class="control-label">Start Month</label>
+                        <input type="text" name="startMonth" id="startMonth" ng-model="veteran.startMonth" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="startYear">
+                    <div>
+                        <label class="control-label">Start Year</label>
+                        <input type="text" name="startYear" id="startYear" ng-model="veteran.startYear" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="endMonth">
+                    <div>
+                        <label class="control-label">End Month</label>
+                        <input type="text" name="endMonth" id="endMonth" ng-model="veteran.endMonth" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="endYear">
+                    <div>
+                        <label class="control-label">End Year</label>
+                        <input type="text" name="endYear" id="endYear" ng-model="veteran.endYear" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="rank">
+                    <div>
+                        <label class="control-label">Rank</label>
+                        <input type="text" name="rank" id="rank" ng-model="veteran.rank" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="theater">
+                    <div>
+                        <label class="control-label">Theater</label>
+                        <input type="text" name="theater" id="theater" ng-model="veteran.theater" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="war">
+                    <div>
+                        <label class="control-label">War</label>
+                        <input type="text" name="war" id="war" ng-model="veteran.war" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="activity">
+                    <div>
+                        <label class="control-label">Activity</label>
+                        <input type="text" name="activity" id="activity" ng-model="veteran.activity" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="awards">
+                    <div>
+                        <label class="control-label">Awards</label>
+                        <input type="text" name="awards" id="awards" ng-model="veteran.awards" class="form-control"
+                               tabindex="1" ng-maxlength="50"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+
+        </div>
+
+    </form>
+</div>
