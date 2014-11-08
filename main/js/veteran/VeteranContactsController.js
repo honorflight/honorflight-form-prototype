@@ -1,6 +1,6 @@
-var modules = require("modules");
+var modules = angular.module('VeteranContacts', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controllerModule.controller('VeteranContactsController', ['$scope', 'VeteranContactsService',
+modules.controller('VeteranContactsController', ['$scope', 'VeteranContactsService',
     function ($scope, VeteranContactsService) {
 
         $scope.type = undefined;

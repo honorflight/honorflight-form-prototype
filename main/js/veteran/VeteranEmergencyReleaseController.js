@@ -1,6 +1,6 @@
-var modules = require("modules");
+var modules = angular.module('EmergencyRelease', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controllerModule.controller('VeteranEmergencyReleaseController', ['$scope', 'ReferenceDataService', 'VeteranEmergencyReleaseService',
+modules.controller('VeteranEmergencyReleaseController', ['$scope', 'ReferenceDataService', 'VeteranEmergencyReleaseService',
     function ($scope, ReferenceDataService, VeteranEmergencyReleaseService) {
 
         $scope.emergencyRelease = new EmergencyRelease();

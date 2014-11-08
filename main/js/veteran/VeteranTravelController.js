@@ -1,6 +1,6 @@
-var modules = require("modules");
+var modules = angular.module('VeteranTravel', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controllerModule.controller('VeteranTravelController', ['$scope', 'ReferenceDataService', 'VeteranTravelService',
+modules.controller('VeteranTravelController', ['$scope', 'ReferenceDataService', 'VeteranTravelService',
     function ($scope, ReferenceDataService, VeteranTravelService) {
         function travel(type){
             this.type = type;

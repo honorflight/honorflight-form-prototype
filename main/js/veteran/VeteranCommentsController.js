@@ -1,6 +1,6 @@
-var modules = require("modules");
+var modules = angular.module('VeteranComments', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controllerModule.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsService',
+modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsService',
     function ($scope, VeteranCommentsService) {
 
         $scope.veteran_comments= [new Comment()];
