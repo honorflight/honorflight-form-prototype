@@ -1,3 +1,5 @@
+<link href="file:///D:/Documents/GitHub/thePianist/css/bootstrap.min.css" rel="stylesheet">
+
 <div ng-controller="VeteranServiceHistoryController">
 	<div class="row">
 		<div class="progress">
@@ -13,7 +15,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="branch">
                     <div>
                         <label class="control-label">Branch</label>
@@ -23,50 +25,28 @@
                     </div>
                 </form-group>
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="startMonth">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="startDate">
                     <div>
-                        <label class="control-label">Start Month</label>
-                        <input type="text" name="startMonth" id="startMonth" ng-model="veteran.startMonth" class="form-control"
-                               tabindex="1" ng-maxlength="50"
+                        <label class="control-label">Start date</label>
+                        <input type="date" name="startDate" id="startDate" ng-model="veteran.startDate" class="form-control"
+                               required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+			<div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="endDate">
+                    <div>
+                        <label class="control-label">End date</label>
+                        <input type="date" name="endDate" id="endDate" ng-model="veteran.endDate" class="form-control"
                                required ng-trim="true">
                     </div>
                 </form-group>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="startYear">
-                    <div>
-                        <label class="control-label">Start Year</label>
-                        <input type="text" name="startYear" id="startYear" ng-model="veteran.startYear" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="endMonth">
-                    <div>
-                        <label class="control-label">End Month</label>
-                        <input type="text" name="endMonth" id="endMonth" ng-model="veteran.endMonth" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="endYear">
-                    <div>
-                        <label class="control-label">End Year</label>
-                        <input type="text" name="endYear" id="endYear" ng-model="veteran.endYear" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
             <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="rank">
                     <div>
@@ -77,22 +57,17 @@
                     </div>
                 </form-group>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="theater">
-                    <div>
-                        <label class="control-label">Theater</label>
-                        <input type="text" name="theater" id="theater" ng-model="veteran.theater" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-            <div class="col-md-6">
-                &nbsp;
-            </div>
-        </div>
+			<div class="col-md-6">
+				<form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="theater">
+					<div>
+						<label class="control-label">Theater</label>
+						<input type="text" name="theater" id="theater" ng-model="veteran.theater" class="form-control"
+							   tabindex="1" ng-maxlength="50"
+							   required ng-trim="true">
+					</div>
+				</form-group>
+			</div>
+		</div>
         <div class="row">
             <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="war">

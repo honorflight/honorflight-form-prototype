@@ -8,10 +8,8 @@ modules.controller('VeteranServiceHistoryController', ['$scope', 'VeteranService
 
         function VeteranServiceHistory(){
             this.branch = "";
-            this.startMonth = "";
-            this.startYear = "";
-            this.endMonth = "";
-            this.endYear = "";
+            this.startDate = "";
+            this.endDate = ""
             this.rank = "";
             this.theater = "";
             this.war = "";
