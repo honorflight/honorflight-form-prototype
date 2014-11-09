@@ -2,45 +2,22 @@ var modules = angular.module('MedicationList', ['ui.bootstrap','ui.utils','ui.ro
 
 modules.controller('VeteranMedicationListController', ['$scope', 'VeteranMedicationListService',
     function ($scope, VeteranMedicationListService) {
-//modules.controllerModule.controller('VeteranMedicationListController', ['$scope', 'ReferenceDataService', 'VeteranMedicationListService',
-//    function ($scope, ReferenceDataService, VeteranMedicationListService) {
-//        $scope.veteranMedical= new VeteranMedicationList()
-//        function VeteranMedicationList(){
-//            this.ifAuthorize = false;
-//			this.medications=[{
-//				'name':"",
-//				'name':"",
-//				'time':"",
-//				'route':""
-//			}];
-//        }
-//        function validateVeteranMedicationList(){
-//        }
-//        $scope.submitForm = function(){
-//            if(validateVeteranMedicationList()){
-//                //GuardianContactsService.sendForm($scope.contacts);
-//            }
-//        }
-//		$scope.addNewMedication = function(){
-//			this.medications.push({
-//				'name':"",
-//				'name':"",
-//				'time':"",
-//				'route':""
-//			})
-//		}
 
         $scope.medicationList = [];
         $scope.medicationList.push(new Medication());
 
         function Medication(){
-            this.medication = "";
+            this.name = "";
             this.dose = "";
             this.time = "";
             this.route = "";
         }
         function validateMedicationList(medicationList){
             //TODO validate medication List
+        }
+
+        $scope.addNewMedication = function() {
+            $scope.medicationList.push(new Medication());
         }
     }
 ]).factory('VeteranMedicationListService', ['$http', function ($http) {

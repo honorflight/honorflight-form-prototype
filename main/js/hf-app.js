@@ -9,7 +9,8 @@
             'ui.bootstrap',
             'GuardianDetails',
             'GuardianContacts',
-            'GuardianPersonalInformation'
+            'GuardianPersonalInformation',
+            'MedicationList'
         ]
     ).config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $stateProvider
@@ -25,10 +26,10 @@
                     url:"/guardianPersonalInformation",
                     templateUrl: 'partials/guardian/Guardian_Personal_Information.html',
                     controller: 'GuardianPersonalInformationController'
-                }).state('veteranContacts', {
-                    url:"/veteranContacts",
-                    templateUrl: 'partials/veteran/Veteran_Contacts.html',
-
+                }).state('veteranMedication', {
+                    url:"/veteranMedication",
+                    templateUrl: 'partials/veteran/Veteran_Medication_List.html',
+                    controller: "VeteranMedicationListController"
                 });
      }]);
 
