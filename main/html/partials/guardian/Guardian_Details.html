@@ -1,6 +1,11 @@
 <div class="col-md-12" ng-controller="GuardianDetailsController">
     <form name="guardianDetailsForm" class="modal-form"   ng-submit="saveGuardianDetails()" novalidate>
         <div class="row">
+            <div class="col-md-12">
+                <h1>Guardian Details</h1>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12" ng-model="details">
                 <form-group validate-when="submitted" form-ctrl="guardianDetailsForm" field-name="learn">
                     <div class="form-group">

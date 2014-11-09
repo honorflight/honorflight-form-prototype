@@ -9,11 +9,15 @@
 
     <form name="veteranContactsForm" class="modal-form" ng-model="contact"  ng-submit="submitVeteranContacts()" novalidate>
         <div class="row">
-            <h1>Veteran Contacts</h1>
+            <div class="col-md-12">
+                <h1>Veteran Contacts</h1>
+            </div>
         </div>
         <div class="col-md-6" ng-repeat="contact in contacts">
             <div class="row">
-                <h3>{{contact.header}}</h3>
+                <div class="col-md-12">
+                    <h3>{{contact.header}}</h3>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
