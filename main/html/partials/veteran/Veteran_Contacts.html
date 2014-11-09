@@ -11,12 +11,12 @@
         <div class="row">
             <h1>Veteran Contacts</h1>
         </div>
-        <div ng-repeat="contact in contacts">
+        <div class="col-md-6" ng-repeat="contact in contacts">
             <div class="row">
                 <h3>{{contact.header}}</h3>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="name">
                         <div class="form-group">
                             <label class="control-label" for="name">Name</label>
@@ -24,6 +24,7 @@
                         </div>
                     </form-group>
                 </div>
+
                 <div class="col-md-6">
                     <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="relationship">
                         <div>
@@ -37,12 +38,13 @@
                                     {{relationshipType.RELATIONSHIP_TYPE_NM__c}}
                                 </option>
                             </select>
+
                         </div>
                     </form-group>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="address">
                         <div class="form-group">
                             <label class="control-label" for="address">Address</label>
@@ -50,6 +52,8 @@
                         </div>
                     </form-group>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="city">
                         <div class="form-group">
@@ -58,9 +62,7 @@
                         </div>
                     </form-group>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="state">
                         <div class="form-group">
                             <label class="control-label" for="state">State</label>
@@ -68,7 +70,7 @@
                         </div>
                     </form-group>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="zip">
                         <div class="form-group">
                             <label class="control-label" for="zip">Zip</label>
@@ -97,7 +99,7 @@
             </div>
             <div class="row" ng-show="contact.type === 'Alternate'">
                 <div class="col-md-4">
-                    <input type="button" class="btn btn-primary" id="copyContact" ng-click="duplicateContact()" value="Copy Contract">
+                    <input type="button" class="btn btn-primary" id="copyContact" ng-click="duplicateContact()" value="Copy Contact">
                 </div>
             </div>
         </div>

@@ -7,8 +7,9 @@ modules.controller('GuardianContactsController', ['$scope', 'GuardianContactsSer
         $scope.contacts = [];
         $scope.contacts.push(new Contact("personalReference"));
         $scope.contacts.push(new Contact("emergencyReference"));
-        function Contact(type){
+        function Contact(type, header){
             this.type = type;
+            this.header = header;
             this.name = "";
             this.email = "";
             this.address = "";

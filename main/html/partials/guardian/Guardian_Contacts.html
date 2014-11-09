@@ -1,63 +1,88 @@
 <div class="col-md-12" ng-controller="GuardianContactsController">
     <form name="guardianContactsForm" class="modal-form"   ng-submit="submitForm()" novalidate>
         <div class="row">
-            <div class="col-md-6" ng-repeat="contact in contacts">
-                <h3>{{contact.type}}</h3>
-                <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="Name">
-                    <div class="form-group">
-                        <label >Name</label>
-                        <input ng-model="contact.name" name="Name" type="text" class="form-control"  placeholder="Name">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="email">
-                    <div class="form-group">
-                        <label >E-Mail</label>
-                        <input ng-model="contact.email" type="email"  name="email" class="form-control"  placeholder="Email Address">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="StreetAddress">
-                    <div class="form-group">
-                        <label >Address</label>
-                        <input ng-model="contact.address" type="text" class="form-control"  name="StreetAddress" placeholder="Street Address">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="City">
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label >City</label>
-                            <input ng-model="contact.city" type="text" class="form-control"  placeholder="City" name="City">
-                        </div>
-                    </div>
-                </form-group>
-            </div>
-            <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="State">
-                <div class="form-group col-md-3">
-                    <label >State</label>
-                    <input ng-model="contact.state" type="text" class="form-control"  placeholder="State" name="State">
-                </div>
-            </form-group>
-            <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="zip">
-                <div class="form-group col-md-3">
-                    <label >Zip</label>
-                    <input ng-model="contact.zip" type="number" class="form-control"  placeholder="Zip" name="zip">
-                </div>
-            </form-group>
+            <h1>Guardian Contacts</h1>
         </div>
-
         <div class="row">
-            <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="dayPhone">
-                <div class="form-group col-md-6">
-                    <label >Day Phone</label>
-                    <input ui-mask="(999) 999-9999" ng-model="contact.dayPhone" type="text" class="form-control" name="dayPhone" >
+            <div class="col-md-6" ng-repeat="contact in contacts">
+                <h3>{{contact.header}}</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="Name">
+                            <div class="form-group">
+                                <label >Name</label>
+                                <input ng-model="contact.name" name="Name" type="text" class="form-control"  placeholder="Name">
+                            </div>
+                        </form-group>
+                    </div>
                 </div>
-            </form-group>
-            <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="evePhone">
-                <div class="form-group col-md-6">
-                    <label >Eve. Phone</label>
-                    <input ui-mask="(999) 999-9999" ng-model="contact.evePhone" type="text" class="form-control" name="evePhone">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="email">
+                            <div class="form-group">
+                                <label >E-Mail</label>
+                                <input ng-model="contact.email" type="email"  name="email" class="form-control"  placeholder="Email Address">
+                            </div>
+                        </form-group>
+                    </div>
                 </div>
-            </form-group>
-        </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="StreetAddress">
+                            <div class="form-group">
+                                <label >Address</label>
+                                <input ng-model="contact.address" type="text" class="form-control"  name="StreetAddress" placeholder="Street Address">
+                            </div>
+                        </form-group>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="City">
+                                <div class="form-group">
+                                    <label >City</label>
+                                    <input ng-model="contact.city" type="text" class="form-control"  placeholder="City" name="City">
+                                </div>
+                        </form-group>
+                    </div>
+                    <div class="col-md-3">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="State">
+                            <div class="form-group">
+                                <label >State</label>
+                                <input ng-model="contact.state" type="text" class="form-control"  placeholder="State" name="State">
+                            </div>
+                        </form-group>
+                    </div>
+                    <div class="col-md-3">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="zip">
+                            <div class="form-group">
+                                <label >Zip</label>
+                                <input ng-model="contact.zip" type="number" class="form-control"  placeholder="Zip" name="zip">
+                            </div>
+                        </form-group>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="dayPhone">
+                            <div class="form-group">
+                                <label >Day Phone</label>
+                                <input ui-mask="(999) 999-9999" ng-model="contact.dayPhone" type="text" class="form-control" name="dayPhone" >
+                            </div>
+                        </form-group>
+                    </div>
+                    <div class="col-md-6">
+                        <form-group validate-when="submitted" form-ctrl="guardianContactsForm" field-name="evePhone">
+                            <div class="form-group">
+                                <label >Evening Phone</label>
+                                <input ui-mask="(999) 999-9999" ng-model="contact.evePhone" type="text" class="form-control" name="evePhone">
+                            </div>
+                        </form-group>
+                    </div>
+                </div>
+            </div>
 
 
 
