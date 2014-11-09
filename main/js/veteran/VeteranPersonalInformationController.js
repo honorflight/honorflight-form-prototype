@@ -1,9 +1,10 @@
 var modules = angular.module('VeteranPersonalInfo', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranPersonalInformationController', ['$scope', 'ReferenceDataService', 'VeteranPersonalInformationService',
-    function ($scope, ReferenceDataService, VeteranPersonalInformationService) {
+modules.controller('VeteranPersonalInformationController', ['$scope', 'VeteranPersonalInformationService',
+    function ($scope, VeteranPersonalInformationService) {
 
         $scope.veteranInfo = new VeteranInfo();
+        $scope.submitted = false;
 
         function VeteranInfo(){
             this.firstName = "";
@@ -25,9 +26,12 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'Reference
         function validateVeteranInfo(){
 
         }
-        $scope.submitForm = function(){
-            if(validateVeteranInfo()){
+        $scope.saveVeteranInfo = function(){
 
+            $scope.submitted = true;
+
+            if(!$scope.veteranPersonalInfoForm.$invalid){
+                var test = "test";
             }
         }
     }

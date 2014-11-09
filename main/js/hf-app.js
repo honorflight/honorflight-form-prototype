@@ -10,7 +10,9 @@
             'GuardianDetails',
             'GuardianContacts',
             'GuardianPersonalInformation',
-            'MedicationList'
+            'MedicationList',
+            'VeteranPersonalInfo',
+            'FormGroup'
         ]
     ).config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $stateProvider
@@ -30,6 +32,10 @@
                     url:"/veteranMedication",
                     templateUrl: 'partials/veteran/Veteran_Medication_List.html',
                     controller: "VeteranMedicationListController"
+                }).state('veteranPersonalInformation', {
+                    url:"/veteranInfo",
+                    templateUrl:'partials/veteran/Veteran_Personal_Information.html',
+                    controller:"VeteranPersonalInformationController"
                 });
      }]);
 
