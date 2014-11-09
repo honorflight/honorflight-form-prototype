@@ -21,10 +21,12 @@
                 <input type="checkbox" ng-model="emergencyRelease.signature">I have read and understood the above.
             </label>
         </div>
+        <form-group validate-when="submitted" form-ctrl="veteranEmergencyReleaseForm" field-name="Date">
         <div class="form-group">
-            <label for="lastSeizure">Date</label>
-            <input type="date" class="form-control" id="date" placeholder="Enter date">
+                                    <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" name="Date" placeholder="Enter date">
         </div>
+            </form-group>
     </form>
 </div>
 
