@@ -34,7 +34,7 @@ modules.controller('VeteranTravelController', ['$scope', 'VeteranTravelService',
 ]).factory('VeteranTravelService', ['$http', function ($http) {
     return {
         sendForm: function (travel) {
-            return $http.post('api/budget/budgets.do', travel);
+            return $http.post('url', travel);
         }
     };
 }]);

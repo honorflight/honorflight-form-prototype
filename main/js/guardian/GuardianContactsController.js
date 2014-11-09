@@ -31,7 +31,7 @@ modules.controller('GuardianContactsController', ['$scope', 'GuardianContactsSer
 ]).factory('GuardianContactsService', ['$http', function ($http) {
     return {
         sendForm: function (details) {
-            return $http.post('api/budget/budgets.do',details);
+            return $http.post('url',details);
         }
     };
 }]);

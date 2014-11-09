@@ -37,7 +37,7 @@ modules.controller('VeteranMedicationListController', ['$scope', 'VeteranMedicat
 ]).factory('VeteranMedicationListService', ['$http', function ($http) {
     return {
         sendForm: function (medications) {
-            return $http.post('api/budget/budgets.do',medications);
+            return $http.post('url',medications);
         }
     };
 }]);

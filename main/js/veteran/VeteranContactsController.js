@@ -54,7 +54,7 @@ modules.controller('VeteranContactsController', ['$scope', 'VeteranContactsServi
 ]).factory('VeteranContactsService', ['$http', function ($http) {
     return {
         sendForm: function (contacts) {
-            return $http.post('api/budget/budgets.do',contacts);
+            return $http.post('url',contacts);
         }
     };
 }]);

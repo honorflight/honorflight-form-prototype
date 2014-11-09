@@ -46,7 +46,7 @@ modules.controller('GuardianPersonalInformationController', ['$scope', 'Guardian
 ]).factory('GuardianPersonalInformationService', ['$http', function ($scope,$http) {
     return {
         sendForm: function (details) {
-            return $http.post('api/budget/budgets.do',details);
+            return $http.post('url',details);
         }
     };
 }]);

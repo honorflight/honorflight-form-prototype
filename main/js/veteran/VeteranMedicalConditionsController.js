@@ -47,7 +47,7 @@ modules.controller('MedicalConditionController', ['$scope',
 ]).factory('VeteranMedicalConditionsService', ['$http', function ($http) {
     return {
         sendForm: function (medicalConditions) {
-            return $http.post('api/budget/budgets.do',medicalConditions);
+            return $http.post('url',medicalConditions);
         }
     };
 }]);

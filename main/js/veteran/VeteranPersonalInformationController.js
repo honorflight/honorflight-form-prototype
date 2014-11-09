@@ -46,7 +46,7 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'VeteranPe
 ]).factory('VeteranPersonalInformationService', ['$http', function ($http) {
     return {
         sendForm: function (veteranInfo) {
-            return $http.post('api/budget/budgets.do',veteranInfo);
+            return $http.post('url',veteranInfo);
         }
     };
 }]);

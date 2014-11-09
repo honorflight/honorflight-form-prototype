@@ -30,7 +30,7 @@ modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsServi
 ]).factory('VeteranCommentsService', ['$http', function ($http) {
     return {
         sendForm: function (comments) {
-            return $http.post('api/budget/budgets.do',comments);
+            return $http.post('url',comments);
         }
     };
 }]);

@@ -29,7 +29,7 @@ modules.controller('VeteranEmergencyReleaseController', ['$scope', 'VeteranEmerg
 ]).factory('VeteranEmergencyReleaseService', ['$http', function ($http) {
     return {
         sendForm: function (emergencyRelease) {
-            return $http.post('api/budget/budgets.do',emergencyRelease);
+            return $http.post('url',emergencyRelease);
         }
     };
 }]);
