@@ -1,7 +1,7 @@
 var modules = angular.module('GuardianContacts', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('GuardianContactsController', ['$scope', 'GuardianContactsService',
-    function ($scope, GuardianContactsService) {
+modules.controller('GuardianContactsController', ['$scope', 'GuardianContactsService','sharedValues',
+    function ($scope, GuardianContactsService, sharedValues) {
         $scope.submitted = false;
 
         $scope.contacts = [];

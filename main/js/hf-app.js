@@ -68,6 +68,16 @@
                     templateUrl:'partials/veteran/Veteran_Comments.html',
                     controller: 'VeteranCommentsController'
                 });
-     }]);
+     }]).service('sharedValues', function () {
+            this.accountIdentifier = "testalssa";
+
+            this.getAccountIdentifier = function() {
+                return this.accountIdentifier;
+            };
+
+            this.setAccountIdentifier = function(value) {
+                this.accountIdentifier = value;
+            };
+     });
 
 }(angular, window));

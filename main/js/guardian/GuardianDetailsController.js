@@ -1,7 +1,7 @@
 var modules = angular.module('GuardianDetails', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('GuardianDetailsController', ['$scope',  'GuardianDetailsService',
-    function ($scope,  GuardianDetailsService) {
+modules.controller('GuardianDetailsController', ['$scope',  'GuardianDetailsService','sharedValues',
+    function ($scope,  GuardianDetailsService, sharedValues) {
 
         $scope.submitted = false;
         $scope.details = new Details();

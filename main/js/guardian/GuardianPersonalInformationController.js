@@ -1,10 +1,11 @@
 var modules = angular.module('GuardianPersonalInformation', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('GuardianPersonalInformationController', ['$scope', 'GuardianPersonalInformationService',
-    function ($scope, ReferenceDataService, GuardianPersonalInformationService) {
+modules.controller('GuardianPersonalInformationController', ['$scope', 'GuardianPersonalInformationService','sharedValues',
+    function ($scope, ReferenceDataService, GuardianPersonalInformationService, sharedValues) {
 
         $scope.personalInfo = new PersonalInfo();
         $scope.submitted = false;
+
 
         function PersonalInfo(){
             this.firstName = "";
@@ -30,11 +31,19 @@ modules.controller('GuardianPersonalInformationController', ['$scope', 'Guardian
         $scope.saveGuardianPersonalInformation = function(){
             $scope.submitted = true;
             if(!$scope.guardianPersonalInformationForm.$invalid){
-                GuardianPersonalInformationService.sendForm($scope.personalInfo);
+                GuardianPersonalInformationService.sendForm($scope.personalInfo)
+                .success(function(data, status, headers, config) {
+                    if(data.identifier){
+                        $scope.accountIdentifier = data.identifier;
+                    }
+                }).error(function(data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                });
             }
         }
     }
-]).factory('GuardianPersonalInformationService', ['$http', function ($http) {
+]).factory('GuardianPersonalInformationService', ['$http', function ($scope,$http) {
     return {
         sendForm: function (details) {
             return $http.post('api/budget/budgets.do',details);
