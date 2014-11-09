@@ -1,12 +1,10 @@
 var modules = angular.module('VeteranPersonalInfo', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranPersonalInformationController', ['$scope', 'VeteranPersonalInformationService',
-    function ($scope, VeteranPersonalInformationService) {
+modules.controller('VeteranPersonalInformationController', ['$scope', 'ReferenceDataService', 'VeteranPersonalInformationService', 'sharedValues',
+    function ($scope, ReferenceDataService, VeteranPersonalInformationService, sharedValues) {
 
         $scope.veteranInfo = new VeteranInfo();
         $scope.submitted = false;
-
-        $scope.shirtSizes = [];
 
         function VeteranInfo(){
             this.firstName = "";
@@ -26,7 +24,7 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'VeteranPe
             this.email = "";
         }
 
-        $scope.saveVeteranInfo = function(){
+        $scope.saveVeteranInfo = function() {
 
             $scope.submitted = true;
 
@@ -35,12 +33,24 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'VeteranPe
             }
         };
 
+        function validateVeteran() {
+            if($scope.veteranInfo.homePhone.length === 0 && $scope.veteranInfo.cellPhone.length === 0 && $scope.veteranInfo.email.length === 0) {
+                $scope.veteranPersonalInfoForm.saveVeteranInformation.$error.contactInfo = false;
+            }
+        }
+
         function processSaveResponse(response) {
             if(response.key) {
                 //Saved successfully
             } else {
                 //Save failed process response.message
             }
+        }
+
+        ReferenceDataService.getReferenceData('Veteran').then(processReferenceData);
+
+        function processReferenceData(referenceData) {
+            $scope.shirtSizes = referenceData.SHIRT_SIZE__c;
         }
     }
 ]).factory('VeteranPersonalInformationService', ['$http', function ($http) {

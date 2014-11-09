@@ -1,11 +1,7 @@
 var modules = angular.module('MedicalConditions', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('MedicalConditionController', ['$scope',
-    function($scope) {
-
-    }
-]).controller('VeteranMedicalConditionsController', ['$scope', 'VeteranMedicalConditionsService',
-    function ($scope, VeteranMedicalConditionsService) {
+modules.controller('VeteranMedicalConditionsController', ['$scope', 'VeteranMedicalConditionsService', 'sharedValues',
+    function ($scope, VeteranMedicalConditionsService, sharedValues) {
 
         $scope.veteranMedicalConditions = [new VeteranMedicalCondition()];
         $scope.submitted = false;

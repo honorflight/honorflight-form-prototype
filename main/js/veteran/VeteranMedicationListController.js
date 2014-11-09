@@ -1,7 +1,7 @@
 var modules = angular.module('MedicationList', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranMedicationListController', ['$scope', 'VeteranMedicationListService',
-    function ($scope, VeteranMedicationListService) {
+modules.controller('VeteranMedicationListController', ['$scope', 'VeteranMedicationListService', 'sharedValues',
+    function ($scope, VeteranMedicationListService, sharedValues) {
 
         $scope.medications = [];
         $scope.medications.push(new Medication());

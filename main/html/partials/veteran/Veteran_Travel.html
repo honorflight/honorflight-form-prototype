@@ -23,12 +23,21 @@
             </div>
         </div>
         <div class="row" ng-show="travel.visited === 'yes'">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="whenVisited">
                     <div>
-                        <label class="control-label">When and with whom?</label>
+                        <label class="control-label">When?</label>
                         <input type="text" name="whenVisited" id="whenVisited" ng-model="travel.whenVisited" class="form-control"
                                tabindex="3" ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="withWhom">
+                    <div>
+                        <label class="control-label">With whom?</label>
+                        <input type="text" name="withWhom" id="withWhom" ng-model="travel.withWhom" class="form-control"
+                               tabindex="4" ng-trim="true">
                     </div>
                 </form-group>
             </div>

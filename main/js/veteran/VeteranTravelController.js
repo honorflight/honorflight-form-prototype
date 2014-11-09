@@ -1,7 +1,7 @@
 var modules = angular.module('VeteranTravel', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranTravelController', ['$scope', 'VeteranTravelService',
-    function ($scope, VeteranTravelService) {
+modules.controller('VeteranTravelController', ['$scope', 'VeteranTravelService', 'sharedValues',
+    function ($scope, VeteranTravelService, sharedValues) {
 
         $scope.travel = new Travel();
         $scope.submitted = false;
@@ -9,6 +9,7 @@ modules.controller('VeteranTravelController', ['$scope', 'VeteranTravelService',
         function Travel(){
             this.visited = "";
             this.whenVisited = "";
+            this.withWhom = "";
             this.companionRequested = "";
             this.guardianRequest = "";
             this.veteranRequests = "";

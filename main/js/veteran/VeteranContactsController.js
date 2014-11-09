@@ -1,7 +1,7 @@
 var modules = angular.module('VeteranContacts', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranContactsController', ['$scope', 'VeteranContactsService',
-    function ($scope, VeteranContactsService) {
+modules.controller('VeteranContactsController', ['$scope', 'ReferenceDataService', 'VeteranContactsService', 'sharedValues',
+    function ($scope, ReferenceDataService, VeteranContactsService, sharedValues) {
 
         $scope.submitted = false;
         $scope.contacts =[];
@@ -49,6 +49,12 @@ modules.controller('VeteranContactsController', ['$scope', 'VeteranContactsServi
             } else {
                 //Save failed process response.message
             }
+        }
+
+        ReferenceDataService.getReferenceData('Veteran').then(processReferenceData);
+
+        function processReferenceData(referenceData) {
+            $scope.relationshipTypes = referenceData.RELATIONSHIP_TYPE__c;
         }
     }
 ]).factory('VeteranContactsService', ['$http', function ($http) {
