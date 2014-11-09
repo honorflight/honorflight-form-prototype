@@ -6,6 +6,8 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'VeteranPe
         $scope.veteranInfo = new VeteranInfo();
         $scope.submitted = false;
 
+        $scope.shirtSizes = [];
+
         function VeteranInfo(){
             this.firstName = "";
             this.lastName = "";
@@ -23,15 +25,21 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'VeteranPe
             this.cellPhone = "";
             this.email = "";
         }
-        function validateVeteranInfo(){
 
-        }
         $scope.saveVeteranInfo = function(){
 
             $scope.submitted = true;
 
             if(!$scope.veteranPersonalInfoForm.$invalid){
-                var test = "test";
+                VeteranPersonalInformationService.sendForm($scope.veteranInfo).then(processSaveResponse);
+            }
+        };
+
+        function processSaveResponse(response) {
+            if(response.key) {
+                //Saved successfully
+            } else {
+                //Save failed process response.message
             }
         }
     }

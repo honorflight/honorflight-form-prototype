@@ -3,14 +3,18 @@ var modules = angular.module('VeteranComments', ['ui.bootstrap','ui.utils','ui.r
 modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsService',
     function ($scope, VeteranCommentsService) {
 
-        $scope.veteran_comments= new Comment();
+        $scope.veteranComments= new Comment();
+        $scope.submitted = false;
+
         function Comment(){
             this.comment="";
         }
 
-        $scope.submitVeteranComments = function(){
-            if(!$scope.veteranAdditionalCommentsForm.$invalid){
-                VeteranCommentsService.sendForm($scope.veteran_comments).then(processSaveResponse);
+        $scope.saveVeteranComments = function() {
+            $scope.submitted = true;
+
+            if(!$scope.veteranCommentsForm.$invalid){
+                VeteranCommentsService.sendForm($scope.veteranComments).then(processSaveResponse);
             }
         };
 

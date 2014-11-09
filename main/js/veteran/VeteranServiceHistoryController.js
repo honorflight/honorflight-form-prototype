@@ -1,30 +1,52 @@
 var modules = angular.module('ServiceHistory', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
-var _ = require("underscore");
+
 
 modules.controller('VeteranServiceHistoryController', ['$scope', 'VeteranServiceHistoryService',
     function ($scope, VeteranServiceHistoryService) {
 
         $scope.veteranServiceHistory = new VeteranServiceHistory();
+        $scope.branches = [];
+        $scope.ranks = [];
+        $scope.wars =[];
+        $scope.serviceAwards = [];
+        $scope.submitted = false;
 
-        function VeteranServiceHistory(){
+        function VeteranServiceHistory() {
             this.branch = "";
             this.startDate = "";
-            this.endDate = ""
+            this.endDate = "";
             this.rank = "";
             this.theater = "";
             this.war = "";
             this.activity = "";
-            this.awards = "";
-        }
-        function validateVeteranInfo(){
-
+            this.awards = [new Award()];
         }
 
-        $scope.submitForm = function(){
-            if(validateVeteranInfo()){
+        function Award() {
+            this.name = "";
+            this.quantity = "";
+            this.comment = "";
+        }
 
+        $scope.addAward = function() {
+            $scope.veteranServiceHistory.awards.push(new Award());
+        };
+
+        $scope.saveServiceHistory = function(){
+            $scope.submitted = true;
+
+            if(!$scope.veteranServiceHistoryForm.$invalid){
+                VeteranServiceHistoryService.sendForm($scope.veteranServiceHistory).then(processSaveResponse);
             }
         };
+
+        function processSaveResponse(response) {
+            if(response.key) {
+                //Saved successfully
+            } else {
+                //Save failed process response.message
+            }
+        }
     }
 ]).factory('VeteranServiceHistoryService', ['$http', function ($http) {
     return {

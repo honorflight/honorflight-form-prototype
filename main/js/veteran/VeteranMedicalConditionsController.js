@@ -1,21 +1,45 @@
 var modules = angular.module('MedicalConditions', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranMedicalConditionsController', ['$scope', 'ReferenceDataService', 'VeteranMedicalConditionsService',
-    function ($scope, ReferenceDataService, VeteranMedicalConditionsService) {
+modules.controller('MedicalConditionController', ['$scope',
+    function($scope) {
 
-        $scope.veteranMedical= new VeteranMedicalConditions();
+    }
+]).controller('VeteranMedicalConditionsController', ['$scope', 'VeteranMedicalConditionsService',
+    function ($scope, VeteranMedicalConditionsService) {
 
-        function VeteranMedicalConditions(){
-            this.conditionType="";
-            this.condition="";
-            this.conditionComments="";
+        $scope.veteranMedicalConditions = [new VeteranMedicalCondition()];
+        $scope.submitted = false;
+        $scope.conditionTypes = [];
+        $scope.medicalConditions = [];
+
+        function VeteranMedicalCondition(){
+            this.conditionType = "";
+            this.conditionName = "";
+            this.conditionDate = "";
+            this.comment = "";
         }
-        function validateVeteranMedicalConditions(contact){
-            //TODO validate contact
-        }
-        $scope.submitForm = function(){
-            if(validateVeteranMedicalConditions()){
-                VeteranMedicalConditionsService.sendForm($scope.veteranMedical);
+
+//        $scope.$watch('veteranMedicalConditions.experimentTypeId', function () {
+//            setExperimentStages();
+//        });TODO:How do we watch each properly
+
+        $scope.addCondition = function() {
+            $scope.veteranMedicalConditions.push(new VeteranMedicalCondition());
+        };
+
+        $scope.saveMedicalConditions = function(){
+            $scope.submitted = true;
+
+            if(!$scope.veteranMedicalConditionForm.$invalid){
+                VeteranMedicalConditionsService.sendForm($scope.veteranMedicalConditions).then(processSaveResponse);
+            }
+        };
+
+        function processSaveResponse(response) {
+            if(response.key) {
+                //Saved successfully
+            } else {
+                //Save failed process response.message
             }
         }
 

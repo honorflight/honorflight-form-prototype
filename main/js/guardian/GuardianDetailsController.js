@@ -3,6 +3,7 @@ var modules = angular.module('GuardianDetails', ['ui.bootstrap','ui.utils','ui.r
 modules.controller('GuardianDetailsController', ['$scope',  'GuardianDetailsService',
     function ($scope,  GuardianDetailsService) {
 
+        $scope.submitted = false;
         $scope.details = new Details();
         function Details(){
             this.howDidYouLearn = "";
@@ -17,8 +18,9 @@ modules.controller('GuardianDetailsController', ['$scope',  'GuardianDetailsServ
         function validateDetails(){
 
         }
-        $scope.submitForm = function(){
-            if(validateDetails()){
+        $scope.saveGuardianDetails = function(){
+            $scope.submitted = true;
+            if(!$scope.guardianDetailsForm.$invalid){
                 GuardianDetailsService.sendForm($scope.details).success();
             }
         }

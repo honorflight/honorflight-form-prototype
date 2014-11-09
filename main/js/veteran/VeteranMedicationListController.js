@@ -3,27 +3,41 @@ var modules = angular.module('MedicationList', ['ui.bootstrap','ui.utils','ui.ro
 modules.controller('VeteranMedicationListController', ['$scope', 'VeteranMedicationListService',
     function ($scope, VeteranMedicationListService) {
 
-        $scope.medicationList = [];
-        $scope.medicationList.push(new Medication());
+        $scope.medications = [];
+        $scope.medications.push(new Medication());
+        $scope.submitted = false;
 
         function Medication(){
             this.name = "";
             this.dose = "";
-            this.time = "";
+            this.frequency = "";
             this.route = "";
         }
-        function validateMedicationList(medicationList){
-            //TODO validate medication List
-        }
 
-        $scope.addNewMedication = function() {
-            $scope.medicationList.push(new Medication());
+        $scope.addMedication = function() {
+            $scope.medications.push(new Medication());
+        };
+
+        $scope.saveMedicationList = function() {
+            $scope.submitted = true;
+
+            if(!$scope.veteranMedicationListForm.$invalid) {
+                VeteranMedicationListService.sendForm($scope.medications).then(processSaveResponse);
+            }
+        };
+
+        function processSaveResponse(response) {
+            if(response.key) {
+                //Saved successfully
+            } else {
+                //Save failed process response.message
+            }
         }
     }
 ]).factory('VeteranMedicationListService', ['$http', function ($http) {
     return {
-        sendForm: function (medicationList) {
-            return $http.post('api/budget/budgets.do',medicationList);
+        sendForm: function (medications) {
+            return $http.post('api/budget/budgets.do',medications);
         }
     };
 }]);

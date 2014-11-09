@@ -1,4 +1,4 @@
-<div ng-controller="VeteranPersonalInfoController"> <!--Controller name may be different-->
+<div ng-controller="VeteranContactsController"> <!--Controller name may be different-->
     <div class="row">
         <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
@@ -11,110 +11,91 @@
         <div class="row">
             <h1>Veteran Contacts</h1>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Alternate Contact (son, daughter, caregiver)</h2>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="name">
-                    <div class="form-group">
-                        <label class="control-label" for="name">Name</label>
-                        <input type="text" class="form-control" id="name" ng-model="contact.name" name="name" placeholder="Name">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="address">
-                    <div class="form-group">
-                        <label class="control-label" for="address">Address</label>
-                        <input type="text" class="form-control" id="address" name="address" ng-model="contact.address" placeholder="Address">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="City">
-                    <div class="form-group">
-                        <label class="control-label" for="city">City</label>
-                        <input type="text" class="form-control" name="City" id="city" ng-model="contact.city" placeholder="City">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="State">
-                    <div class="form-group">
-                        <label class="control-label" for="state">State</label>
-                        <input type="text" class="form-control" id="state" name="State" ng-model="contact.state" placeholder="State">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="Zip">
-                    <div class="form-group">
-                        <label class="control-label" for="zip">Zip</label>
-                        <input type="number" class="form-control" id="zip" name="Zip" ng-model="contact.zip" placeholder="Zip">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="Phone">
-                    <div class="form-group">
-                        <label class="control-label" for="phone">Phone</label>
-                        <input type="text" class="form-control" id="phone" name="Phone" ng-model="contact.phone" placeholder="Phone" ui-mask="(999) 999-9999">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="AlternatePhone">
-                    <div class="form-group">
-                        <label class="control-label" for="altPhone">Alternate Phone</label>
-                        <input type="text" class="form-control" id="altPhone" name="AlternatePhone" ng-model="contact.altPhone" placeholder="Alternate Phone" ui-mask="(999) 999-9999">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="RelationShip">
-                    <div class="form-group">
-                        <label class="control-label" for="relationship">Relationship</label>
-                        <input type="text" class="form-control" id="relationship" name="RelationShip" ng-model="contact.relationship" placeholder="Relationship">
-                    </div>
-                </form-group>
+        <div ng-repeat="contact in contacts">
+            <div class="row">
+                <h3>{{contact.header}}</h3>
             </div>
-
-            <div class="col-md-6">
-                <h2>Emergency Contact (if different)</h2>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="Name">
-                    <div class="form-group">
-                        <label class="control-label" for="name-em">Name</label>
-                        <input type="text" class="form-control" id="name-em" name="Name" ng-model="contact.name_em" placeholder="Name">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="Address">
-                    <div class="form-group">
-                        <label class="control-label" for="address-em">Address</label>
-                        <input type="text" class="form-control" id="address-em" name="Address" ng-model="contact.address_em" placeholder="Address">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="City">
-                    <div class="form-group">
-                        <label class="control-label" for="city-em">City</label>
-                        <input type="text" class="form-control" id="city-em" name="City" ng-model="contact.city_em" placeholder="City">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="State">
-                    <div class="form-group">
-                        <label class="control-label" for="state-em">State</label>
-                        <input type="text" class="form-control" id="state-em" name="State" ng-model="contact.state_em" placeholder="State">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="Zip">
-                    <div class="form-group">
-                        <label class="control-label" for="zip-em">Zip</label>
-                        <input type="number" class="form-control" id="zip-em" name="Zip" ng-model="contact.zip_em" placeholder="Zip">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="Phone">
-                    <div class="form-group">
-                        <label class="control-label" for="phone-em">Phone</label>
-                        <input type="text" class="form-control" id="phone-em"  name="Phone" ng-model="contact.phone_em" placeholder="Phone" ui-mask="(999) 999-9999">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="AlternatePhone">
-                    <div class="form-group">
-                        <label class="control-label" for="altPhone-em">Alternate Phone</label>
-                        <input type="text" class="form-control" id="altPhone-em" name="AlternatePhone" ng-model="contact.altPhone_em" placeholder="Alternate Phone" ui-mask="(999) 999-9999">
-                    </div>
-                </form-group>
-                <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="RelationShip">
-
-                    <div class="form-group">
-                        <label class="control-label" for="relationship-em">Relationship</label>
-                        <input type="text" class="form-control" id="relationship-em"  name="RelationShip"ng-model="contact.relationship_em" placeholder="Relationship">
-                    </div>
-                </form-group>
+            <div class="row">
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="name">
+                        <div class="form-group">
+                            <label class="control-label" for="name">Name</label>
+                            <input type="text" class="form-control" id="name" ng-model="contact.name" name="name" required>
+                        </div>
+                    </form-group>
+                </div>
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="relationship">
+                        <div class="form-group">
+                            <label class="control-label" for="relationship">Relationship</label>
+                            <input type="text" class="form-control" id="relationship" name="relationship" ng-model="contact.relationship">
+                        </div>
+                    </form-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="address">
+                        <div class="form-group">
+                            <label class="control-label" for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" ng-model="contact.address">
+                        </div>
+                    </form-group>
+                </div>
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="city">
+                        <div class="form-group">
+                            <label class="control-label" for="city">City</label>
+                            <input type="text" class="form-control" name="City" id="city" ng-model="contact.city">
+                        </div>
+                    </form-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="state">
+                        <div class="form-group">
+                            <label class="control-label" for="state">State</label>
+                            <input type="text" class="form-control" id="state" name="state" ng-model="contact.state">
+                        </div>
+                    </form-group>
+                </div>
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="zip">
+                        <div class="form-group">
+                            <label class="control-label" for="zip">Zip</label>
+                            <input type="number" class="form-control" id="zip" name="zip" ng-model="contact.zip" ui-mask="99999">
+                        </div>
+                    </form-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="primaryPhone">
+                        <div class="form-group">
+                            <label class="control-label" for="primaryPhone">Primary Phone</label>
+                            <input type="text" class="form-control" id="primaryPhone" name="primaryPhone" ng-model="contact.primaryPhone" ui-mask="(999) 999-9999" required>
+                        </div>
+                    </form-group>
+                </div>
+                <div class="col-md-6">
+                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="alternatePhone">
+                        <div class="form-group">
+                            <label class="control-label" for="alternatePhone">Alternate Phone</label>
+                            <input type="text" class="form-control" id="alternatePhone" name="alternatePhone" ng-model="contact.alternatePhone" ui-mask="(999) 999-9999">
+                        </div>
+                    </form-group>
+                </div>
+            </div>
+            <div class="row" ng-show="contact.type === 'Alternate'">
+                <div class="col-md-4">
+                    <input type="button" class="btn btn-primary" id="copyContact" ng-click="duplicateContact()" value="Copy Contract">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="saveVeteranContacts()">Next >></button>
             </div>
         </div>
     </form>

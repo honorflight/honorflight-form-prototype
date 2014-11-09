@@ -14,22 +14,20 @@
 
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="firstName">
-                    <div>
-                        <label class="control-label">First Name</label>
-                        <input type="text" name="firstName" id="firstName" ng-model="veteranInfo.firstName" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-            <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="lastName">
                     <div>
                         <label class="control-label">Last Name</label>
                         <input type="text" name="lastName" id="lastName" ng-model="veteranInfo.lastName" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="1" required ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="firstName">
+                    <div>
+                        <label class="control-label">Last Name</label>
+                        <input type="text" name="firstName" id="firstName" ng-model="veteranInfo.firstName" class="form-control"
+                               tabindex="2" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
@@ -40,18 +38,16 @@
                     <div>
                         <label class="control-label">Middle Name</label>
                         <input type="text" name="middleName" id="middleName" ng-model="veteranInfo.middleName" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="3" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
             <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="nickname">
                     <div>
-                        <label class="control-label">Middle Name</label>
+                        <label class="control-label">Nickname</label>
                         <input type="text" name="nickname" id="nickname" ng-model="veteranInfo.nickname" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="4" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
@@ -62,8 +58,7 @@
                     <div>
                         <label class="control-label">Date of Birth</label>
                         <input type="text" name="dateOfBirth" id="dateOfBirth" ng-model="veteranInfo.dateOfBirth" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="5" required placeholder="MM/DD/YYYY" ui-mask="99/99/9999">
                     </div>
                 </form-group>
             </div>
@@ -72,8 +67,7 @@
                     <div>
                         <label class="control-label">Age</label>
                         <input type="text" name="age" id="age" ng-model="veteranInfo.age" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="6" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
@@ -82,10 +76,16 @@
             <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="tShirtSize">
                     <div>
-                        <label class="control-label">Date of Birth</label>
-                        <input type="text" name="tShirtSize" id="tShirtSize" ng-model="veteranInfo.tShirtSize" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <label class="control-label">T-Shirt Size</label>
+                        <select name="tShirtSize" id="tShirtSize" ui-select2="selectOptions"
+                                class="form-control"
+                                ng-model="veteranInfo.tShirtSize"
+                                placeholder="Choose shirt size" style="width:100%;" required tabindex="7">
+                            <option value=""></option>
+                            <option ng-repeat="shirtSize in shirtSizes" value="{{shirtSize.Name}}">
+                                {{shirtSize.Name}}
+                            </option>
+                        </select>
                     </div>
                 </form-group>
             </div>
@@ -99,8 +99,7 @@
                     <div>
                         <label class="control-label">Address</label>
                         <input type="text" name="address" id="address" ng-model="veteranInfo.address" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="8" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
@@ -109,8 +108,7 @@
                     <div>
                         <label class="control-label">City</label>
                         <input type="text" name="city" id="city" ng-model="veteranInfo.city" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="9" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
@@ -121,18 +119,16 @@
                     <div>
                         <label class="control-label">State</label>
                         <input type="text" name="state" id="state" ng-model="veteranInfo.state" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="10" required>
                     </div>
                 </form-group>
             </div>
             <div class="col-md-5">
-                <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="zip">
+                <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="zipCode">
                     <div>
                         <label class="control-label">Zip Code</label>
                         <input type="text" name="zipCode" id="zipCode" ng-model="veteranInfo.zipCode" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required>
+                               ui-mask="99999" tabindex="11" required>
                     </div>
                 </form-group>
             </div>
@@ -141,8 +137,7 @@
                     <div>
                         <label class="control-label">County</label>
                         <input type="text" name="county" id="county" ng-model="veteranInfo.county" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="12" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
@@ -152,7 +147,8 @@
                 <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="homePhone">
                     <div>
                         <label class="control-label">Home Phone</label>
-                        <input type="text" name="homePhone" id="homePhone" ng-model="veteranInfo.homePhone" class="form-control" ui-mask="(999)999-9999" required>
+                        <input type="text" name="homePhone" id="homePhone" ng-model="veteranInfo.homePhone" class="form-control"
+                               ui-mask="(999) 999-9999"  tabindex="13" required>
                     </div>
                 </form-group>
             </div>
@@ -161,8 +157,7 @@
                     <div>
                         <label class="control-label">Cell Phone</label>
                         <input type="text" name="cellPhone" id="cellPhone" ng-model="veteranInfo.cellPhone" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               ui-mask="(999) 999-9999" tabindex="14">
                     </div>
                 </form-group>
             </div>
@@ -173,8 +168,7 @@
                     <div>
                         <label class="control-label">E-Mail Address</label>
                         <input type="text" name="email" id="email" ng-model="veteranInfo.email" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="15" ng-maxlength="50" required ng-trim="true">
                     </div>
                 </form-group>
             </div>
@@ -184,7 +178,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <button type="submit" class="btn btn-primary" id="saveVeteranInfo">Save</button>
+                <button type="submit" class="btn btn-primary" id="saveVeteranInfo" tabindex="16">Save</button>
             </div>
         </div>
     </form>

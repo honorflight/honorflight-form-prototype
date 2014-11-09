@@ -2,6 +2,8 @@ var modules = angular.module('GuardianContacts', ['ui.bootstrap','ui.utils','ui.
 
 modules.controller('GuardianContactsController', ['$scope', 'GuardianContactsService',
     function ($scope, GuardianContactsService) {
+        $scope.submitted = false;
+
         $scope.contacts = [];
         $scope.contacts.push(new Contact("personalReference"));
         $scope.contacts.push(new Contact("emergencyReference"));
@@ -19,7 +21,8 @@ modules.controller('GuardianContactsController', ['$scope', 'GuardianContactsSer
         function validateContact(contact){
             //TODO validate contact
         }
-        $scope.submitForm = function(){
+        $scope.saveGuardianContacts = function(){
+            $scope.submitted = true;
             if(validateContact()){
                 GuardianContactsService.sendForm($scope.contacts);
             }

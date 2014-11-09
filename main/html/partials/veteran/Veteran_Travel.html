@@ -1,13 +1,13 @@
 <div ng-controller="VeteranTravelController">
 	<div class="row">
-		<div class="progress">
+		<div class="progress"><!-- TODO: Do we want to keep this? -->
 			<div class="progress-bar" role="progressbar" aria-valuenow="12.5" aria-valuemin="0" aria-valuemax="100" style="width: 12.5%;">
 			Step 2/8
 			</div>
 		</div>
 	</div>
 
-    <form name="veteranTravelForm" class="modal-form"  ng-submit="submitVeteranTravel()" novalidate>
+    <form name="veteranTravelForm" class="modal-form"  ng-submit="saveVeteranTravel()" novalidate>
         <div class="row">
             <h1>Travel History</h1>
         </div>
@@ -16,69 +16,57 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranTravelController" ng-model="travel" field-name="visited">
                     <div>
                         <label class="control-label">Have you been to see your Memorial in Washington D.C.?</label>
-                        <input type="text" name="visited" id="visited" ng-model="travel.visited" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <input type="radio" name="visitedYes" id="visitedYes" ng-model="travel.visited" value="yes" tabindex="1" required>  Yes
+                        <input type="radio" name="visitedNo" id="visitedNo" ng-model="travel.visited" value="no" tabindex="2" required> No
                     </div>
                 </form-group>
             </div>
         </div>
-        <div class="row">
+        <div class="row" ng-show="travel.visited === 'yes'">
             <div class="col-md-12">
                 <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="whenVisited">
                     <div>
-                        <label class="control-label">If yes, when and with whom?</label>
+                        <label class="control-label">When and with whom?</label>
                         <input type="text" name="whenVisited" id="whenVisited" ng-model="travel.whenVisited" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                               tabindex="3" ng-trim="true">
                     </div>
                 </form-group>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="isGuardianRequested">
+                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="companionRequested">
                     <div>
-                        <label class="control-label">Are you requesting travel with a specific veteran(s) or guardian, if possible?</label>
-                        <input type="text" name="isGuardianRequested" id="isGuardianRequested" ng-model="travel.isGuardianRequested" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <label class="control-label">Are you requesting travel with a specific guardian or veteran(s), if possible?</label>
+                        <input type="radio" name="companionRequestedYes" id="companionRequestedYes" ng-model="travel.companionRequested" value="yes" tabindex="4" required>  Yes
+                        <input type="radio" name="companionRequestedNo" id="companionRequestedNo" ng-model="travel.companionRequested" value="no" tabindex="5" required> No
+                    </div>
+                </form-group>
+            </div>
+        </div>
+        <div class="row" ng-show="travel.companionRequested === 'yes'">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="guardianRequest">
+                    <div>
+                        <label class="control-label">Please name the guardian:</label>
+                        <input type="text" name="guardianRequest" id="guardianRequest" ng-model="travel.guardianRequest" class="form-control"
+                               tabindex="5" ng-trim="true">
+                    </div>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="veteranRequests">
+                    <div>
+                        <label class="control-label">Please name the veteran(s):</label>
+                        <input type="text" name="veteranRequests" id="veteranRequests" ng-model="travel.veteranRequests" class="form-control"
+                               tabindex="6" ng-trim="true">
                     </div>
                 </form-group>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <form-group validate-when="submitted" form-ctrl="VeteranTravelController" field-name="guardianRequested">
-                    <div>
-                        <label class="control-label">If yes, please name the guardian(s):</label>
-                        <input type="text" name="guardianRequested" id="guardianRequested" ng-model="travel.guardianRequested" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="address">
-                    <div>
-                        <label class="control-label">Address</label>
-                        <input type="text" name="address" id="address" ng-model="travel.address" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranPersonalInfoController" field-name="city">
-                    <div>
-                        <label class="control-label">City</label>
-                        <input type="text" name="city" id="city" ng-model="travel.city" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="saveVeteranTravel">Next >></button>
             </div>
         </div>
     </form>

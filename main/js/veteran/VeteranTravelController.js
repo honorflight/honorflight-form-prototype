@@ -4,23 +4,37 @@ modules.controller('VeteranTravelController', ['$scope', 'VeteranTravelService',
     function ($scope, VeteranTravelService) {
 
         $scope.travel = new Travel();
+        $scope.submitted = false;
 
         function Travel(){
             this.visited = "";
             this.whenVisited = "";
-            this.isGuardianRequested = "";
-            this.guardianRequested = "";
-            this.address = "";
-            this.city = "";
+            this.companionRequested = "";
+            this.guardianRequest = "";
+            this.veteranRequests = "";
         }
-        function validateTravel(travel){
-            //TODO validate travel
+
+        $scope.saveVeteranTravel = function(){
+
+            $scope.submitted = true;
+
+            if(!$scope.veteranTravelForm.$invalid){
+                VeteranTravelService.sendForm($scope.travel).then(processSaveResponse);
+            }
+        };
+
+        function processSaveResponse(response) {
+            if(response.key) {
+                //Saved successfully
+            } else {
+                //Save failed process response.message
+            }
         }
     }
 ]).factory('VeteranTravelService', ['$http', function ($http) {
     return {
         sendForm: function (travel) {
-            return $http.post('api/budget/budgets.do',travel);
+            return $http.post('api/budget/budgets.do', travel);
         }
     };
 }]);

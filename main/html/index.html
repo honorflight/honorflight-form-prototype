@@ -33,20 +33,32 @@
   <script src="../js/veteran/VeteranMedicationListController.js"></script>
   <script src="../js/veteran/VeteranPersonalInformationController.js"></script>
   <script src="../js/directives/FormGroupDirective.js"></script>
+  <script src="../js/veteran/VeteranCommentsController.js"></script>
+  <script src="../js/veteran/VeteranContactsController.js"></script>
+  <script src="../js/veteran/VeteranEmergencyReleaseController.js"></script>
+  <script src="../js/veteran/VeteranMedicalConditionsController.js"></script>
+  <script src="../js/veteran/VeteranMedicationListController.js"></script>
+  <script src="../js/veteran/VeteranServiceHistoryController.js"></script>
+  <script src="../js/veteran/VeteranTravelController.js"></script>
   <script src="../js/hf-app.js"></script>
 
   <!-- Add New Component JS Above -->
 
-  <div>
+  <div><!-- TODO: add master controller? -->
     <div id="content" class="container">
       <div class="row">
-       Hello World
           <div class="col-md-12">
-              <a ui-sref="guardianDetails">Route 1</a>
-              <a ui-sref="guardianContacts">Route 2</a>
-              <a ui-sref="guardianPersonalInformation">Route 3</a>
-              <a ui-sref="veteranMedication">Route 4</a>
+              <a ui-sref="guardianDetails">Guardian Details</a>
+              <a ui-sref="guardianContacts">Guardian Contacts</a>
+              <a ui-sref="guardianPersonalInformation">Guardian Info</a>
               <a ui-sref="veteranPersonalInformation">Veteran Info</a>
+              <a ui-sref="veteranTravel">Veteran Travel</a>
+              <a ui-sref="veteranContacts">Veteran Contacts</a>
+              <a ui-sref="veteranServiceHistory">Veteran Service History</a>
+              <a ui-sref="veteranEmergencyRelease">Veteran Emergency Release</a>
+              <a ui-sref="veteranMedications">Veteran Medication</a>
+              <a ui-sref="veteranMedicalConditions">Veteran Medical Conditions</a>
+              <a ui-sref="veteranComments">Veteran Comments</a>
               <div class="row">
                   <div class="col-md-12">
                       <div ui-view></div>

@@ -13,7 +13,7 @@ modules.directive('formGroup',
             controller: ['$scope', function ($scope) {
                 $scope.isInvalid = function (field) {
                     if ($scope.formCtrl && $scope.formCtrl[field]) {
-                        return $scope.formCtrl[field].$invalid && ($scope.formCtrl[field].$dirty || $scope.validateWhen);
+                        return $scope.formCtrl[field].$invalid && $scope.validateWhen;
                     } else {
                         return false;
                     }
@@ -27,7 +27,7 @@ modules.directive('formGroup',
                 };
                 $scope.hasErrors = function (field, error) {
                     if ($scope.formCtrl && $scope.formCtrl[field]) {
-                        return $scope.formCtrl[field].$error[error] && ($scope.formCtrl[field].$dirty || $scope.validateWhen);
+                        return $scope.formCtrl[field].$error[error] && $scope.validateWhen;
                     } else {
                         return false;
                     }
