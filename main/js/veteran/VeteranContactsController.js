@@ -3,32 +3,43 @@ var modules = angular.module('VeteranContacts', ['ui.bootstrap','ui.utils','ui.r
 modules.controller('VeteranContactsController', ['$scope', 'VeteranContactsService',
     function ($scope, VeteranContactsService) {
 
-        $scope.type = undefined;
-        $scope.contact = new Contact($scope.type);
+        $scope.submitted = false;
+        $scope.contacts =[];
+        $scope.contacts.push(new Contact("Alternate", "Alternate Contact (son, daughter, caregiver)"));
+        $scope.contacts.push(new Contact("Emergency", "Emergency Contact (if different)"));
 
-        function Contact(type){
+        function Contact(type, header){
             this.type = type;
+            this.header = header;
             this.name = "";
             this.address = "";
             this.city = "";
             this.state = "";
             this.zip = "";
-            this.phone = "";
-            this.altPhone = "";
+            this.primaryPhone = "";
+            this.alternatePhone = "";
             this.relationship = "";
-            this.name_em = "";
-            this.address_em = "";
-            this.city_em = "";
-            this.state_em = "";
-            this.zip_em = "";
-            this.phone_em = "";
-            this.altPhone_em = "";
-            this.relationship_em = "";
         }
 
-        $scope.submitVeteranContacts = function(){
+        $scope.duplicateContact = function() {
+            var alternate = $scope.contacts[0];
+            var emergency = $scope.contacts[1];
+
+            emergency.name = alternate.name;
+            emergency.address = alternate.address;
+            emergency.city = alternate.city;
+            emergency.state = alternate.state;
+            emergency.zip = alternate.zip;
+            emergency.primaryPhone = alternate.primaryPhone;
+            emergency.alternatePhone = alternate.alternatePhone;
+            emergency.relationship = alternate.relationship;
+        };
+
+        $scope.submitVeteranContacts = function() {
+            $scope.submitted = true;
+
             if(!$scope.veteranContactsForm.$invalid){
-                VeteranContactsService.sendForm($scope.contact).then(processSaveResponse);
+                VeteranContactsService.sendForm($scope.contacts).then(processSaveResponse);
             }
         };
 

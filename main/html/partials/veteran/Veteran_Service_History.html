@@ -7,127 +7,166 @@
 		</div>
 	</div>
 
-    <form name="veteranServiceHistoryForm" class="modal-form"  ng-submit="submitVeteranServiceHistory()" novalidate>
+    <form name="veteranServiceHistoryForm" class="modal-form"  ng-submit="saveServiceHistory()" novalidate>
         <div class="row">
             <h1>Service History</h1>
         </div>
 
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="branch">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="branch">
                     <div>
                         <label class="control-label">Branch</label>
-                        <input type="text" name="branch" id="branch" ng-model="veteran.branch" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <select name="branch" id="branch" ui-select2="selectOptions"
+                                class="form-control"
+                                ng-model="veteranServiceHistory.branch"
+                                placeholder="Choose branch" style="width:100%;" required tabindex="7">
+                            <option value=""></option>
+                            <option ng-repeat="branch in branches" value="{{branch.SERVICE_BRANCH_NAME__c}}">
+                                {{branch.SERVICE_BRANCH_NAME__c}}
+                            </option>
+                        </select>
                     </div>
                 </form-group>
             </div>
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="startMonth">
-                    <div>
-                        <label class="control-label">Start Month</label>
-                        <input type="text" name="startMonth" id="startMonth" ng-model="veteran.startMonth" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="startYear">
-                    <div>
-                        <label class="control-label">Start Year</label>
-                        <input type="text" name="startYear" id="startYear" ng-model="veteran.startYear" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="endMonth">
-                    <div>
-                        <label class="control-label">End Month</label>
-                        <input type="text" name="endMonth" id="endMonth" ng-model="veteran.endMonth" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="endYear">
-                    <div>
-                        <label class="control-label">End Year</label>
-                        <input type="text" name="endYear" id="endYear" ng-model="veteran.endYear" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="rank">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="rank">
                     <div>
                         <label class="control-label">Rank</label>
-                        <input type="text" name="rank" id="rank" ng-model="veteran.rank" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <select name="rank" id="rank" ui-select2="selectOptions"
+                                class="form-control"
+                                ng-model="veteranServiceHistory.rank"
+                                placeholder="Choose rank" style="width:100%;" required tabindex="7">
+                            <option value=""></option>
+                            <option ng-repeat="rank in ranks" value="{{rank.Name}}">
+                                {{rank.Name}}
+                            </option>
+                        </select>
                     </div>
                 </form-group>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="theater">
-                    <div>
-                        <label class="control-label">Theater</label>
-                        <input type="text" name="theater" id="theater" ng-model="veteran.theater" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
-                    </div>
-                </form-group>
-            </div>
-            <div class="col-md-6">
-                &nbsp;
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="war">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="war">
                     <div>
                         <label class="control-label">War</label>
-                        <input type="text" name="war" id="war" ng-model="veteran.war" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <select name="war" id="war" ui-select2="selectOptions"
+                                class="form-control"
+                                ng-model="veteranServiceHistory.war"
+                                placeholder="Choose war" style="width:100%;" required tabindex="7">
+                            <option value=""></option>
+                            <option ng-repeat="war in wars" value="{{war.WAR_NM__c}}">
+                                {{war.WAR_NM__c}}
+                            </option>
+                        </select>
                     </div>
                 </form-group>
             </div>
             <div class="col-md-6">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="activity">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="rank">
                     <div>
-                        <label class="control-label">Activity</label>
-                        <input type="text" name="activity" id="activity" ng-model="veteran.activity" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <label class="control-label">Theater</label>
+                        <input type="text" name="theater" id="theater" ng-model="veteranServiceHistory.theater" class="form-control"
+                               tabindex="1" ng-trim="true">
                     </div>
                 </form-group>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
-                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryController" field-name="awards">
+            <div class="col-md-12">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="activity">
                     <div>
-                        <label class="control-label">Awards</label>
-                        <input type="text" name="awards" id="awards" ng-model="veteran.awards" class="form-control"
-                               tabindex="1" ng-maxlength="50"
-                               required ng-trim="true">
+                        <label class="control-label">Activity</label>
+                        <input type="text" name="activity" id="activity" ng-model="veteranServiceHistory.activity" class="form-control"
+                               tabindex="1" ng-trim="true">
                     </div>
                 </form-group>
             </div>
-
         </div>
 
+        <div class="row">
+            <div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="startDate">
+                    <div>
+                        <label class="control-label">Start date</label>
+                        <input type="date" name="startDate" id="startDate" ng-model="veteran.startDate" class="form-control" placeholder="MM/YYYY" ui-mask="99/9999">
+                    </div>
+                </form-group>
+            </div>
+			<div class="col-md-6">
+                <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="endDate">
+                    <div>
+                        <label class="control-label">End date</label>
+                        <input type="date" name="endDate" id="endDate" ng-model="veteran.endDate" class="form-control" placeholder="MM/YYYY" ui-mask="99/9999">
+                    </div>
+                </form-group>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Awards</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="control-label">Name</label>
+            </div>
+            <div class="col-md-4">
+                <label class="control-label">Quantity</label>
+            </div>
+            <div class="col-md-4">
+                <label class="control-label">Comment</label>
+            </div>
+        </div>
+
+        <div ng-repeat="award in veteranServiceHistory.awards">
+            <div class="row">
+                <div class="col-md-4">
+                    <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="name">
+                        <div>
+                            <select name="name" id="name" ui-select2="selectOptions"
+                                    class="form-control"
+                                    ng-model="award.name"
+                                    placeholder="Choose award" style="width:100%;">
+                                <option value=""></option>
+                                <option value="other">Other</option>
+                                <option ng-repeat="serviceAward in serviceAwards" value="{{serviceAward.SERVICE_AWARD_NM__c}}">
+                                    {{serviceAward.SERVICE_AWARD_NM__c}}
+                                </option>
+                            </select>
+                        </div>
+                    </form-group>
+                </div>
+                <div class="col-md-4">
+                    <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="quantity">
+                        <div>
+                            <input type="text" name="quantity" id="quantity" ng-model="award.quantity" class="form-control">
+                        </div>
+                    </form-group>
+                </div>
+                <div class="col-md-4">
+                    <form-group validate-when="submitted" form-ctrl="VeteranServiceHistoryForm" field-name="comment">
+                        <div>
+                            <input type="text" name="comment" id="comment" ng-model="award.comment" class="form-control">
+                        </div>
+                    </form-group>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                &nbsp;
+            </div>
+            <div class="col-md-2">
+                <input type="button" class="btn btn-primary" id="addAward" ng-click="addAward()" value="Add Award">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="saveServiceHistory">Next >></button>
+            </div>
+        </div>
     </form>
 </div>

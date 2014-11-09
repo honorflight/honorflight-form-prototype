@@ -9,51 +9,69 @@
 			</div>
 		</div>
 	</div>
-	<form class="form-inline" role="form" ng-submit="" novalidate>
-		<p>
-			I hereby authorize Greater St. Louis Honor Flight, Inc. (hereafter, “Honor Flight”), its officers, employees, members, participants, users and/or
-			volunteers, to take the action they believe is appropriate in an emergency situation. Further, I agree to indemnify and hold harmless Honor Flight,
-			any officer, affiliate, employee, member, participant, user and/or volunteer thereof, against any claim(s) arising out of said emergency care.
-		</p>
-		<div class="checkbox">
-			<label>
-				<input ng-model="veteranMedical.ifAuthorize" type="checkbox" value="authorize">Check if you agree
-			</label>
+    <form name="veteranMedicationListForm" class="modal-form" ng-model="medications"  ng-submit="saveMedicationList()" novalidate>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Veteran Medical Information and Medical List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                This information will help Honor Flight serve you best on the trip by meeting all of your needs. The medical information
+                    you provide WILL NOT disqualify you from going on a flight. Information is used for Honor Flight personnel only.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <label class="control-label">Medication</label>
+            </div>
+            <div class="col-md-3">
+                <label class="control-label">Dose (mg, etc)</label>
+            </div>
+            <div class="col-md-3">
+                <label class="control-label">How Often/Time of Day</label>
+            </div>
+            <div class="col-md-3">
+                <label class="control-label">Route (orally, injection, etc)</label>
+            </div>
+        </div>
+		<div ng-repeat="medication in medications">
+            <div class="row">
+                <div class="col-md-3">
+                    <form-group validate-when="submitted" form-ctrl="veteranMedicationListForm" field-name="name">
+                        <input type="text" ng-model="medication.name" class="form-control" name="name" id="name">
+                    </form-group>
+                </div>
+                <div class="col-md-3">
+                    <form-group validate-when="submitted" form-ctrl="veteranMedicationListForm" field-name="dose">
+                        <input type="text" ng-model="medication.dose" class="form-control" name="dose" id="dose">
+                    </form-group>
+                </div>
+                <div class="col-md-3">
+                    <form-group validate-when="submitted" form-ctrl="veteranMedicationListForm" field-name="frequency">
+                        <input type="text" ng-model="medication.frequency" class="form-control" name="frequency" id="frequency">
+                    </form-group>
+                </div>
+                <div class="col-md-3">
+                    <form-group validate-when="submitted" form-ctrl="veteranMedicationListForm" field-name="route">
+                        <input type="text" ng-model="medication.route" class="form-control" name="route" id="route">
+                    </form-group>
+                </div>
+            </div>
 		</div>
-
-		<h4>VETERAN MEDICAL INFORMATION AND MEDICATION LIST</h4>
-		<p>This information will help Honor Flight serve you best on the trip by meeting all of your needs. The medical information
-			you provide WILL NOT disqualify you from going on a flight. Information is used for Honor Flight personnel only.</p>
-
-		<div style="padding-top: 10px; border-top: 1px solid dodgerblue;" ng-repeat="med in medicationList">
-			<h4>Medication Information:</h4>
-			<p style="color:black; font-size: 80%;">Medication/ Dose (MG ETC) / How Often (Time of day)/ Route (By Mouth, Injection, Topical) </p>
-
-			<div class="form-group" >
-				<span style="color:black; font-size: 100%;">Medication:</span>
-				<input type="text" ng-model="med.name" class="form-control" name="medication" placeholder="Medication" required>
-			</div>
-
-			<div class="form-group" style="padding-left: 20px; padding-right: 20px;">
-				<span style="color:black; font-size: 100%;">Dose:</span>
-				<input type="text" ng-model="med.dose" class="form-control" name="dose" placeholder="100mg" required>
-			</div>
-
-			<div class="form-group" style="padding-top: 10px; padding-bottom: 10px;">
-				<span style="color:black; font-size: 100%;">How Often:</span>
-				<input type="text" ng-model="med.time" class="form-control" name="how_often" placeholder="once a day" required>
-			</div>
-
-			<div class="form-group" style="padding-left: 20px; padding-right: 20px;padding-top: 10px; padding-bottom: 10px;">
-				<span style="color:black; font-size: 100%;">Route:</span>
-				<input type="text" ng-model="med.route" class="form-control" name="route" placeholder="By mouth, Injection, Topical, etc" required>
-			</div>
-
-		</div>
-
-		<button ng-click="addNewMedication()">Add New Medication</button>
+        <div class="row">
+            <div class="col-md-10">
+                &nbsp;
+            </div>
+            <div class="col-md-2">
+                <input type="button" class="btn btn-primary" id="addMedication" ng-click="addMedication()" value="Add Medication">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="saveMedicationList">Next >></button>
+            </div>
+        </div>
 	</form>
 </div>
-<!--/div>
-<div class="col-md-2" style="border-left: dashed;">test3</div>
-<div class="col-md-2" style="border-left: dashed;">test4</div-->

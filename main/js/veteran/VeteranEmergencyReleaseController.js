@@ -1,15 +1,18 @@
 var modules = angular.module('EmergencyRelease', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranEmergencyReleaseController', ['$scope', 'ReferenceDataService', 'VeteranEmergencyReleaseService',
-    function ($scope, ReferenceDataService, VeteranEmergencyReleaseService) {
+modules.controller('VeteranEmergencyReleaseController', ['$scope', 'VeteranEmergencyReleaseService',
+    function ($scope, VeteranEmergencyReleaseService) {
 
         $scope.emergencyRelease = new EmergencyRelease();
+        $scope.submitted = false;
 
         function EmergencyRelease(){
             this.signature = "";
         }
 
-        $scope.submitVeteranEmergencyRelease = function(){
+        $scope.saveEmergencyRelease = function(){
+            $scope.submitted = true;
+
             if(!$scope.veteranEmergencyReleaseForm.$invalid){
                 VeteranEmergencyReleaseService.sendForm($scope.emergencyRelease).then(processSaveResponse);
             }

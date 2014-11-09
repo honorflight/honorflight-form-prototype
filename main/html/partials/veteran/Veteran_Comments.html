@@ -9,23 +9,28 @@
 		</div>
 	</div>
 
-    <form name="veteranAdditionalCommentsForm" class="modal-form"  ng-submit="submitVeteranComments()" novalidate>
+    <form name="veteranCommentsForm" class="modal-form"  ng-submit="saveVeteranComments()" novalidate>
         <div class="row">
-            <h1>Additional Comments</h1>
+            <h1>Veteran Comments</h1>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-                <validation-messages validate-when="submitted" form-ctrl="VeteranAdditionalCommentsController" field-name="comments">
+                <form-group validate-when="submitted" form-ctrl="VeteranCommentsForm" field-name="comments">
                     <div>
-                        <label class="control-label">Comments</label>
-                        <input ng-model="veteran_comments.comment" type="text" name="comments" id="comments" ng-model="veteran.comments" class="form-control"
-                               tabindex="1" ng-maxlength="150"
-                               required ng-trim="true">
+                        <label class="control-label">Additional Comments or Concerns</label>
+                        <textarea ng-model="veteranComments.comment" name="comments" id="comments" class="form-control"></textarea>
+                        <!--<input ng-model="veteran_comments.comment" type="text" name="comments" id="comments" ng-model="veteran.comments" class="form-control"-->
+                               <!--tabindex="1" ng-maxlength="150"-->
+                               <!--required ng-trim="true">-->
                     </div>
-                </validation-messages>
+                </form-group>
             </div>
-
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="saveVeteranComments">Complete</button>
+            </div>
         </div>
     </form>
 </div>

@@ -2,9 +2,11 @@ var modules = angular.module('GuardianPersonalInformation', ['ui.bootstrap','ui.
 
 modules.controller('GuardianPersonalInformationController', ['$scope', 'GuardianPersonalInformationService',
     function ($scope, ReferenceDataService, GuardianPersonalInformationService) {
+
         $scope.personalInfo = new PersonalInfo();
-        function PersonalInfo(type){
-            this.type = type;
+        $scope.submitted = false;
+
+        function PersonalInfo(){
             this.firstName = "";
             this.lastName = "";
             this.middleName = "";
@@ -24,11 +26,10 @@ modules.controller('GuardianPersonalInformationController', ['$scope', 'Guardian
             this.whenServed = "";
             this.veteranName = "";
         }
-        function validatePersonalInfo(PersonalInfo){
-            //TODO validate Personal Info
-        }
-        $scope.submitForm = function(){
-            if(validatePersonalInfo()){
+
+        $scope.saveGuardianPersonalInformation = function(){
+            $scope.submitted = true;
+            if(!$scope.guardianPersonalInformationForm.$invalid){
                 GuardianPersonalInformationService.sendForm($scope.personalInfo);
             }
         }

@@ -1,46 +1,62 @@
 <div class="col-md-12" ng-controller="GuardianDetailsController">
-    <div class="row">
-        <div class="col-md-12" ng-model="details">
-            <div class="form-group">
-                <label >How did you learn about Honor Flight?</label>
-                <textarea class="form-control" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <label >Why are you volunteering for Honor Flight?</label>
-                <textarea class="form-control" rows="3" ></textarea>
-            </div>
-            <div class="form-group">
-                <label >Please list prior volunteer experience</label>
-                <textarea class="form-control" rows="3" ></textarea>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> I am able to push a veteran in a wheelchair up a slight incline
-                        </label>
+    <form name="guardianDetailsForm" class="modal-form"   ng-submit="saveGuardianDetails()" novalidate>
+        <div class="row">
+            <div class="col-md-12" ng-model="details">
+                <form-group validate-when="submitted" form-ctrl="guardianDetailsForm" field-name="learn">
+                    <div class="form-group">
+                        <label >How did you learn about Honor Flight?</label>
+                        <textarea class="form-control" rows="3" name="learn"></textarea>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> I am able to lift 100 lbs
-                        </label>
+                </form-group>
+                <form-group validate-when="submitted" form-ctrl="guardianDetailsForm" field-name="VolunteeringReason">
+                    <div class="form-group">
+                        <label >Why are you volunteering for Honor Flight?</label>
+                        <textarea class="form-control" rows="3" name="VolunteeringReason"></textarea>
                     </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label >Please identify any physical limitations, restrictions and / or medical conditions that may affect your ability to fulfill the duties of a guardian</label>
-                <textarea class="form-control" rows="3" ></textarea>
-            </div>
-            <div class="form-group">
-                <label >Please note any medical experience you may have (e.g., EMT, CPR, Paramedics</label>
-                <textarea class="form-control" rows="3" ></textarea>
-            </div>
+                </form-group>
+                <form-group validate-when="submitted" form-ctrl="guardianDetailsForm" field-name="PriorExperience">
+                    <div class="form-group">
+                        <label >Please list prior volunteer experience</label>
+                        <textarea class="form-control" rows="3" name="PriorExperience"></textarea>
+                    </div>
+                </form-group>
 
-            <div class="row">
-                <button type="submit" class="btn btn-primary pull-right">Next Step >></button>
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> I am able to push a veteran in a wheelchair up a slight incline
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> I am able to lift 100 lbs
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <form-group validate-when="submitted" form-ctrl="guardianDetailsForm" field-name="Affects">
+                    <div class="form-group">
+                        <label >Please identify any physical limitations, restrictions and / or medical conditions that may affect your ability to fulfill the duties of a guardian</label>
+                        <textarea class="form-control" rows="3" name="Affects"></textarea>
+                    </div>
+                </form-group>
+                <form-group validate-when="submitted" form-ctrl="guardianDetailsForm" field-name="Note">
+                    <div class="form-group">
+                        <label >Please note any medical experience you may have (e.g., EMT, CPR, Paramedics</label>
+                        <textarea class="form-control" rows="3" name="Note"></textarea>
+                    </div>
+                </form-group>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary pull-right">Next Step >></button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>

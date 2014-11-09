@@ -7,23 +7,27 @@
 		</div>
 	</div>
 
-    <form name="veteranEmergencyReleaseForm" class="modal-form" ng-model="emergencyRelease"  ng-submit="submitEmergencyRelease()" novalidate>
+    <form name="veteranEmergencyReleaseForm" class="modal-form" ng-model="emergencyRelease"  ng-submit="saveEmergencyRelease()" novalidate>
         <div class="row">
-        <p>I hereby authorize Greater St. Louis Honor Flight, Inc. (hereafter, �Honor Flight�), its officers,
-        employees, members, participants, users and/or volunteers, to take the action they believe is
-        appropriate in an emergency situation. Further, I agree to indemnify and hold harmless Honor Flight,
-        any officer, affiliate, employee, member, participant, user and/or volunteer thereof, against any
-        claim(s) arising out of said emergency care.</p>
+            <div class="col-md-12">
+                <p>I hereby authorize Greater St. Louis Honor Flight, Inc. (hereafter, "Honor Flight"), its officers,
+                employees, members, participants, users and/or volunteers, to take the action they believe is
+                appropriate in an emergency situation. Further, I agree to indemnify and hold harmless Honor Flight,
+                any officer, affiliate, employee, member, participant, user and/or volunteer thereof, against any
+                claim(s) arising out of said emergency care.</p>
+            </div>
         </div>
-        
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" ng-model="emergencyRelease.signature">I have read and understood the above.
-            </label>
+        <div class="row">
+            <div class="col-md-12">
+                <form-group validate-when="submitted" form-ctrl="veteranEmergencyReleaseForm" field-name="signature">
+                    <input type="checkbox" name="signature" id="signature" ng-model="emergencyRelease.signature" required>&nbsp;I certify that I have read and understand the above.
+                </form-group>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="lastSeizure">Date</label>
-            <input type="date" class="form-control" id="date" placeholder="Enter date">
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" id="saveServiceHistory">Next >></button>
+            </div>
         </div>
     </form>
 </div>
