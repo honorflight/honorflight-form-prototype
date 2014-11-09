@@ -19,7 +19,8 @@
             'MedicalConditions',
             'MedicationList',
             'ServiceHistory',
-            'VeteranTravel'
+            'VeteranTravel',
+            'ReferenceData'
         ]
     ).config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $stateProvider

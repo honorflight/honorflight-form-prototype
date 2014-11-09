@@ -1,7 +1,7 @@
 var modules = angular.module('VeteranComments', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsService',
-    function ($scope, VeteranCommentsService) {
+modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsService', 'sharedValues',
+    function ($scope, VeteranCommentsService, sharedValues) {
 
         $scope.veteranComments= new Comment();
         $scope.submitted = false;

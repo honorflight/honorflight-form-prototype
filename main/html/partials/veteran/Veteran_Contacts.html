@@ -25,10 +25,18 @@
                     </form-group>
                 </div>
                 <div class="col-md-6">
-                    <form-group validate-when="submitted" form-ctrl="veteranContactsForm" field-name="relationship">
-                        <div class="form-group">
-                            <label class="control-label" for="relationship">Relationship</label>
-                            <input type="text" class="form-control" id="relationship" name="relationship" ng-model="contact.relationship">
+                    <form-group validate-when="submitted" form-ctrl="veteranPersonalInfoForm" field-name="relationship">
+                        <div>
+                            <label class="control-label">Relationship</label>
+                            <select name="relationship" id="relationship" ui-select2="selectOptions"
+                                    class="form-control"
+                                    ng-model="veteranInfo.relationship"
+                                    placeholder="Choose relationship" style="width:100%;" tabindex="7">
+                                <option value=""></option>
+                                <option ng-repeat="relationshipType in relationshipTypes" value="{{relationshipType.Id}}">
+                                    {{relationshipType.RELATIONSHIP_TYPE_NM__c}}
+                                </option>
+                            </select>
                         </div>
                     </form-group>
                 </div>

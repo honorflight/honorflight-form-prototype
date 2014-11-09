@@ -1,14 +1,10 @@
 var modules = angular.module('ServiceHistory', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
 
-modules.controller('VeteranServiceHistoryController', ['$scope', 'VeteranServiceHistoryService',
-    function ($scope, VeteranServiceHistoryService) {
+modules.controller('VeteranServiceHistoryController', ['$scope', 'ReferenceDataService', 'VeteranServiceHistoryService', 'sharedValues',
+    function ($scope, ReferenceDataService, VeteranServiceHistoryService, sharedValues) {
 
         $scope.veteranServiceHistory = new VeteranServiceHistory();
-        $scope.branches = [];
-        $scope.ranks = [];
-        $scope.wars =[];
-        $scope.serviceAwards = [];
         $scope.submitted = false;
 
         function VeteranServiceHistory() {
@@ -46,6 +42,16 @@ modules.controller('VeteranServiceHistoryController', ['$scope', 'VeteranService
             } else {
                 //Save failed process response.message
             }
+        }
+
+        ReferenceDataService.getReferenceData('Veteran').then(processReferenceData);
+
+        function processReferenceData(referenceData) {
+            $scope.branches = referenceData.SERVICE_BRANCH__c;
+            $scope.rankTypes = referenceData.SERVICE_RANK_TYPE__c;
+            $scope.ranks = referenceData.SERVICE_RANK__c;
+            $scope.wars = referenceData.WAR__c;
+            $scope.serviceAwards = referenceData.SERVICE_AWARD__c;
         }
     }
 ]).factory('VeteranServiceHistoryService', ['$http', function ($http) {

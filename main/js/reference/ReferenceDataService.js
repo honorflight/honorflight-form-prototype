@@ -1,12 +1,12 @@
 'use strict';
 
-var modules = require('modules');
+var modules = angular.module('ReferenceData', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.serviceModule.factory('ReferenceDataService', ['$http', '$q',
+modules.factory('ReferenceDataService', ['$http', '$q',
     function($http, $q) {
         return {
-            getReferenceData: function(objectType, fields) {
-                var url = "real url?objectType="+objectType+"&fields="+fields;
+            getReferenceData: function(objectType) {
+                var url = "http://bigblur.com/wp-content/plugins/honorflight-forms/honorflight-forms-plugin/api/reference_data.php?sobject_type="+objectType;
                 var defer = $q.defer();
 
                 $http.get(url).then(function (result) {

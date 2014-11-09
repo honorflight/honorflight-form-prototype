@@ -1,7 +1,7 @@
 var modules = angular.module('EmergencyRelease', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
-modules.controller('VeteranEmergencyReleaseController', ['$scope', 'VeteranEmergencyReleaseService',
-    function ($scope, VeteranEmergencyReleaseService) {
+modules.controller('VeteranEmergencyReleaseController', ['$scope', 'VeteranEmergencyReleaseService', 'sharedValues',
+    function ($scope, VeteranEmergencyReleaseService, sharedValues) {
 
         $scope.emergencyRelease = new EmergencyRelease();
         $scope.submitted = false;
