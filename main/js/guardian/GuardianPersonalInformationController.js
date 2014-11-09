@@ -13,12 +13,11 @@ modules.controller('GuardianPersonalInformationController', ['$scope', 'Guardian
             this.city = "";
             this.state = "";
             this.zip = "";
-            this.dayPhone = "";
-            this.eveningPhone = "";
+            this.homePhone = "";
             this.cellPhone = "";
             this.email = "";
             this.occupation = "";
-            this.age = "";
+            this.age = "age";
             this.dateOfBirth = "";
             this.branch = "";
             this.whereServed = "";
