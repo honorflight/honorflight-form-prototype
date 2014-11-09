@@ -1,11 +1,11 @@
 <div ng-controller="VeteranPersonalInformationController">
-    <div class="row">
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-            Step 1/8
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+			Step 1/8
+			</div>
+		</div>
+	</div>
 
     <form name="veteranPersonalInfoForm" class="modal-form" ng-model="veteranInfo"  ng-submit="submitVeteranPersonalInformation()" novalidate>
         <div class="row">
@@ -48,7 +48,7 @@
             <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="nickname">
                     <div>
-                        <label class="control-label">Nickname</label>
+                        <label class="control-label">Middle Name</label>
                         <input type="text" name="nickname" id="nickname" ng-model="veteranInfo.nickname" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
@@ -61,7 +61,8 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="dateOfBirth">
                     <div>
                         <label class="control-label">Date of Birth</label>
-                        <input type="date" name="dateOfBirth" id="dateOfBirth" ng-model="veteranInfo.dateOfBirth" class="form-control"
+                        <input type="text" name="dateOfBirth" id="dateOfBirth" ng-model="veteranInfo.dateOfBirth" class="form-control"
+                               tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
                 </form-group>
@@ -70,7 +71,8 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="age">
                     <div>
                         <label class="control-label">Age</label>
-                        <input type="number" name="age" id="age" ng-model="veteranInfo.age" class="form-control"
+                        <input type="text" name="age" id="age" ng-model="veteranInfo.age" class="form-control"
+                               tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
                 </form-group>
@@ -80,7 +82,7 @@
             <div class="col-md-6">
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="tShirtSize">
                     <div>
-                        <label class="control-label">T-Shirt Size</label>
+                        <label class="control-label">Date of Birth</label>
                         <input type="text" name="tShirtSize" id="tShirtSize" ng-model="veteranInfo.tShirtSize" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
@@ -128,7 +130,7 @@
                 <form-group validate-when="submitted" form-ctrl="VeteranPersonalInformationController" field-name="zip">
                     <div>
                         <label class="control-label">Zip Code</label>
-                        <input type="number" name="zipCode" id="zipCode" ng-model="veteranInfo.zipCode" class="form-control"
+                        <input type="text" name="zipCode" id="zipCode" ng-model="veteranInfo.zipCode" class="form-control"
                                tabindex="1" ng-maxlength="50"
                                required ng-trim="true">
                     </div>
