@@ -3,39 +3,27 @@ var modules = angular.module('MedicalConditions', ['ui.bootstrap','ui.utils','ui
 modules.controller('VeteranMedicalConditionsController', ['$scope', 'ReferenceDataService', 'VeteranMedicalConditionsService',
     function ($scope, ReferenceDataService, VeteranMedicalConditionsService) {
 
-        $scope.veteranMedical= new VeteranMedicalConditions()
-        function VeteranMedicalConditions(){
-            this.ifSeizures = false;
-            this.ifGrandMal = false;
-            this.ifPetitMal = false;
-            this.lastSeizure = "";
-            this.breathingProblems = "";
-            this.nebulizer = "";
-            this.oxygen = "";
-			this.colostomy="";
-			this.arthritis="";
-			this.heartProblems="";
-			this.sinusProblems="";
-			this.earProblems="";
-			this.motionSickness="";
-			this.headInjury="";
-			this.walkingProblems="";
-			this.walkingProblemsReason="";
-			this.needMobility="";
-			this.ifScooter="";
-			this.ifWheelchair="";
-			this.ifWalker="";
-			this.ifCane="";
+        $scope.veteranMedical= new VeteranMedicalConditions();
 
+        function VeteranMedicalConditions(){
+            this.conditionType="";
+            this.condition="";
+            this.conditionComments="";
         }
         function validateVeteranMedicalConditions(contact){
             //TODO validate contact
         }
         $scope.submitForm = function(){
             if(validateVeteranMedicalConditions()){
-                GuardianContactsService.sendForm($scope.contacts);
+                VeteranMedicalConditionsService.sendForm($scope.veteranMedical);
             }
         }
 
     }
-]);
+]).factory('VeteranMedicalConditionsService', ['$http', function ($http) {
+    return {
+        sendForm: function (medicalConditions) {
+            return $http.post('api/budget/budgets.do',medicalConditions);
+        }
+    };
+}]);

@@ -6,13 +6,12 @@ modules.controller('VeteranEmergencyReleaseController', ['$scope', 'ReferenceDat
         $scope.emergencyRelease = new EmergencyRelease();
 
         function EmergencyRelease(){
-            this.veteranId = "";
             this.signature = "";
         }
 
         $scope.submitVeteranEmergencyRelease = function(){
             if(!$scope.veteranEmergencyReleaseForm.$invalid){
-                VeteranEmergencyReleaseService.saveVeteranEmergencyRelease($scope.emergencyRelease).then(processSaveResponse);
+                VeteranEmergencyReleaseService.sendForm($scope.emergencyRelease).then(processSaveResponse);
             }
         };
 
@@ -24,4 +23,10 @@ modules.controller('VeteranEmergencyReleaseController', ['$scope', 'ReferenceDat
             }
         }
     }
-]);
+]).factory('VeteranEmergencyReleaseService', ['$http', function ($http) {
+    return {
+        sendForm: function (emergencyRelease) {
+            return $http.post('api/budget/budgets.do',emergencyRelease);
+        }
+    };
+}]);

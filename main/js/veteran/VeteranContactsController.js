@@ -28,7 +28,7 @@ modules.controller('VeteranContactsController', ['$scope', 'VeteranContactsServi
 
         $scope.submitVeteranContacts = function(){
             if(!$scope.veteranContactsForm.$invalid){
-                VeteranContactsService.saveVeteranContacts($scope.contact).then(processSaveResponse);
+                VeteranContactsService.sendForm($scope.contact).then(processSaveResponse);
             }
         };
 
@@ -40,4 +40,10 @@ modules.controller('VeteranContactsController', ['$scope', 'VeteranContactsServi
             }
         }
     }
-]);
+]).factory('VeteranContactsService', ['$http', function ($http) {
+    return {
+        sendForm: function (contacts) {
+            return $http.post('api/budget/budgets.do',contacts);
+        }
+    };
+}]);

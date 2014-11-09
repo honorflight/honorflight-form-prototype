@@ -28,4 +28,10 @@ modules.controller('VeteranServiceHistoryController', ['$scope', 'VeteranService
             }
         };
     }
-]);
+]).factory('VeteranServiceHistoryService', ['$http', function ($http) {
+    return {
+        sendForm: function (serviceHistory) {
+            return $http.post('api/budget/budgets.do',serviceHistory);
+        }
+    };
+}]);

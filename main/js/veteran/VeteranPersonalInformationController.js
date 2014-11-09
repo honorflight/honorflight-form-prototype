@@ -31,4 +31,10 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'Reference
             }
         }
     }
-]);
+]).factory('VeteranPersonalInformationService', ['$http', function ($http) {
+    return {
+        sendForm: function (veteranInfo) {
+            return $http.post('api/budget/budgets.do',veteranInfo);
+        }
+    };
+}]);

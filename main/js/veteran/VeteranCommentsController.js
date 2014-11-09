@@ -3,10 +3,9 @@ var modules = angular.module('VeteranComments', ['ui.bootstrap','ui.utils','ui.r
 modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsService',
     function ($scope, VeteranCommentsService) {
 
-        $scope.veteran_comments= [new Comment()];
+        $scope.veteran_comments= new Comment();
         function Comment(){
             this.comment="";
-            this.veteranId = "";
         }
 
         $scope.submitVeteranComments = function(){
@@ -24,10 +23,10 @@ modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsServi
         }
 
     }
-]).factory('VeteranContactsService', ['$http', function ($http) {
+]).factory('VeteranCommentsService', ['$http', function ($http) {
     return {
-        sendForm: function (details) {
-            return $http.post('api/budget/budgets.do',details);
+        sendForm: function (comments) {
+            return $http.post('api/budget/budgets.do',comments);
         }
     };
 }]);
