@@ -25,6 +25,8 @@ modules.controller('VeteranEmergencyReleaseController', ['$scope', 'VeteranEmerg
                 //Save failed process response.message
             }
         }
+
+        util.setBreadcrumb('#veteranEmergencyRelease');
     }
 ]).factory('VeteranEmergencyReleaseService', ['$http', function ($http) {
     return {

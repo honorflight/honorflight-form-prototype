@@ -53,6 +53,8 @@ modules.controller('VeteranServiceHistoryController', ['$scope', 'ReferenceDataS
             $scope.wars = referenceData.WAR__c;
             $scope.serviceAwards = referenceData.SERVICE_AWARD__c;
         }
+
+        util.setBreadcrumb('#veteranServiceHistory');
     }
 ]).factory('VeteranServiceHistoryService', ['$http', function ($http) {
     return {

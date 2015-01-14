@@ -39,6 +39,7 @@ modules.controller('VeteranMedicalConditionsController', ['$scope', 'VeteranMedi
             }
         }
 
+        util.setBreadcrumb('#veteranMedicalConditions');
     }
 ]).factory('VeteranMedicalConditionsService', ['$http', function ($http) {
     return {

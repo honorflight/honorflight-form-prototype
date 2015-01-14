@@ -52,6 +52,8 @@ modules.controller('VeteranPersonalInformationController', ['$scope', 'Reference
         function processReferenceData(referenceData) {
             $scope.shirtSizes = referenceData.SHIRT_SIZE__c;
         }
+
+        util.setBreadcrumb('#veteranPersonalInformation');
     }
 ]).factory('VeteranPersonalInformationService', ['$http', function ($http) {
     return {

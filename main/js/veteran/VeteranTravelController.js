@@ -31,6 +31,8 @@ modules.controller('VeteranTravelController', ['$scope', 'VeteranTravelService',
                 //Save failed process response.message
             }
         }
+
+        util.setBreadcrumb('#veteranTravel');
     }
 ]).factory('VeteranTravelService', ['$http', function ($http) {
     return {

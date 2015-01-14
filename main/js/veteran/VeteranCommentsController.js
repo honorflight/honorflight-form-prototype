@@ -25,7 +25,7 @@ modules.controller('VeteranCommentsController', ['$scope', 'VeteranCommentsServi
                 //Save failed process response.message
             }
         }
-
+        util.setBreadcrumb('#veteranComments');
     }
 ]).factory('VeteranCommentsService', ['$http', function ($http) {
     return {

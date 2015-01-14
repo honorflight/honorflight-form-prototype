@@ -33,6 +33,8 @@ modules.controller('VeteranMedicationListController', ['$scope', 'VeteranMedicat
                 //Save failed process response.message
             }
         }
+
+        util.setBreadcrumb('#veteranMedicationList');
     }
 ]).factory('VeteranMedicationListService', ['$http', function ($http) {
     return {

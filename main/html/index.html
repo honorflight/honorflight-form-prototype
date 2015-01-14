@@ -42,6 +42,7 @@
   <script src="../js/veteran/VeteranTravelController.js"></script>
   <script src="../js/reference/ReferenceDataService.js"></script>
   <script src="../js/hf-app.js"></script>
+  <script src="../js/util.js"></script>
 
   <!-- Add New Component JS Above -->
 
@@ -49,17 +50,19 @@
     <div id="content" class="container">
       <div class="row">
           <div class="col-md-12">
-              <a ui-sref="guardianDetails">Guardian Details</a>
-              <a ui-sref="guardianContacts">Guardian Contacts</a>
-              <a ui-sref="guardianPersonalInformation">Guardian Info</a>
-              <a ui-sref="veteranPersonalInformation">Veteran Info</a>
-              <a ui-sref="veteranTravel">Veteran Travel</a>
-              <a ui-sref="veteranContacts">Veteran Contacts</a>
-              <a ui-sref="veteranServiceHistory">Veteran Service History</a>
-              <a ui-sref="veteranEmergencyRelease">Veteran Emergency Release</a>
-              <a ui-sref="veteranMedications">Veteran Medication</a>
-              <a ui-sref="veteranMedicalConditions">Veteran Medical Conditions</a>
-              <a ui-sref="veteranComments">Veteran Comments</a>
+              <div class="breadcrumb">
+                  <!--<a ui-sref="guardianDetails">Guardian Details</a> >-->
+                  <!--<a ui-sref="guardianContacts">Guardian Contacts</a> >-->
+                  <!--<a ui-sref="guardianPersonalInformation">Guardian Info</a> >-->
+                  <a ui-sref="veteranPersonalInformation" id="veteranPersonalInformation">Veteran Info</a> >
+                  <a ui-sref="veteranTravel" id="veteranTravel">Travel</a> >
+                  <a ui-sref="veteranContacts" id="veteranContacts">Contacts</a> >
+                  <a ui-sref="veteranServiceHistory" id="veteranServiceHistory">Service History</a> >
+                  <a ui-sref="veteranEmergencyRelease" id ="veteranEmergencyRelease">Emergency Release</a> >
+                  <a ui-sref="veteranMedications">Veteran Medication</a> >
+                  <a ui-sref="veteranMedicalConditions" id="veteranMedicalConditions">Medical Conditions</a> >
+                  <a ui-sref="veteranComments" id="veteranComments">Comments</a>
+              </div>
               <div class="row">
                   <div class="col-md-12">
                       <div ui-view></div>

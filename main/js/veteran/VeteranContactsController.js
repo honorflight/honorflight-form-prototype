@@ -56,6 +56,8 @@ modules.controller('VeteranContactsController', ['$scope', 'ReferenceDataService
         function processReferenceData(referenceData) {
             $scope.relationshipTypes = referenceData.RELATIONSHIP_TYPE__c;
         }
+
+        util.setBreadcrumb('#veteranContacts');
     }
 ]).factory('VeteranContactsService', ['$http', function ($http) {
     return {
